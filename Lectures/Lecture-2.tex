@@ -1,0 +1,127 @@
+\newpage
+\section{Lecture-02}
+
+\begin{definition}[Euclidean Vector Space]
+	A Euclidean vector space is a finite-dimensional inner product space over $\R$.
+\end{definition}
+
+\begin{definition}[Inner product space]
+	An inner product space is a vector space $V$ over the field $F$ together with an inner product, that is, a map 
+	\[ \langle \cdot,\cdot \rangle : V \times V \to F\]
+	that satisfies the following three properties for all vectors $x,y,z \in V$ and all scalars $a,b \in F$.
+	 \begin{enumerate}
+		 \item (Symmetry) $\langle x,y \rangle = \langle y,x \rangle$.
+		 \item (Linearity in the first argument)  $\langle ax + by,z \rangle = a \langle x,z \rangle + b \langle y,z \rangle$.
+
+		 \item (Positive-definiteness) If $x \neq 0$ then,  $\langle x,x \rangle  > 0$.
+	\end{enumerate}
+\end{definition}
+
+\begin{example}
+	Verify that the dot product function $\langle \cdot, \cdot \rangle : \R \times \R \to \R$ is an inner product.
+
+	To verify this we must prove the three conditions shown above. Let $u = (a,b)$ and  $v = (c,d)$. Then,
+	\begin{enumerate}
+		\item $\langle u, v \rangle = ac + bd = ca + db = \langle v,u \rangle.$
+		\item Let $a,b \in \R$ and $u,v,w \in \R^2$ with $u = (u_1,u_2), v = (v_1,v_2), w = (w_1,w_2)$. Then 
+
+	\end{enumerate}
+	\begin{align*}
+		\langle au + bv, w \rangle &= (au_1 + bv_1) w_1 + (au_2+bv_2) w_2 \\
+					   &= au_1w_1 + bv_1w_1 + au_2w_2 + bv_2w_2 \\
+					   &= a(u_1w_1 + u_2w_2) + b(v_1v_2 + v_2w_2) \\ 
+					   &= a \langle u,w \rangle + b \langle v,w \rangle. 
+	\end{align*}
+	\begin{enumerate}
+		\item[3.] For any $u = (u_1,u_2)$, 
+			\[ \langle u, u \rangle = {u_1}^2 + {u_2}^2.\]
+			Since squares of non-zero numbers are positive, we have  ${u_1}^2 >0, {u_2}^2 > 0$ and therefore,  $\langle u,u \rangle > 0$.
+	\end{enumerate}
+\end{example}
+
+\begin{definition}[Informal]
+	Define \textbf{norm} of a vector $x \in V$ as 
+	\[ || x || = \sqrt{\langle x,x \rangle}.\]
+\end{definition}
+
+\begin{definition}[Metric Space]
+	A metric space is an ordered pair $(M,d)$ where $M$ is a set and $d$ is a \textbf{metric} (distance) on $M$, i.e., a function 
+	\[d : M \times M \to \R\]
+	satisfying the following axioms for all points $x,y,z \in M$ :
+	\begin{enumerate}
+		\item $d(x,y) \geq 0$;
+		\item $d(x,y) = 0 \iff x = y$ ;
+		\item $d(x,y) = d(y,x)$.
+		\item $d(x,z) \leq d(x,y) + d(y,z)$.
+	\end{enumerate}
+\end{definition}
+
+\begin{example}[Tax-cab Metric]
+	In $\R^2$, the taxi-cab distance between $p=(p_1,p_2)$ and $q=(q_1,q_2)$ is
+	 $|q_1 - p_2| + |q_2-p_2|$. It is easy to verify that this is a metric.
+\end{example}
+
+\begin{definition}[Open ball]
+	For any $x \in \R^n$ and any $r > 0$, the \textbf{open ball} of radius $r$ around $x$ is the subset 
+	\[B_r(x) = \{y \in \R^n \mid |x-y| < r\}.\]
+\end{definition}
+
+\begin{center}
+	\includegraphics[scale=0.18]{Lectures/images/open-set.jpg}
+\end{center}
+
+\begin{definition}[Open sets of $\R^n$ ]
+	A subset $U \in \R^n$ is open if for every point $x \in U$, there exists $r > 0$ such that the open ball $B_r(x)$ is contained in $U$.
+\end{definition}
+
+\begin{example}
+We prove that the Cartesian product \((a_1,b_1)\times(a_2,b_2)\) of two open intervals in \(\mathbb{R}\) is an open set in \(\mathbb{R}^2\) with the standard Euclidean topology.
+
+\begin{proof}
+Let \(d\) denote the Euclidean metric on \(\mathbb{R}^2\):
+\[
+d\big((x_1,y_1),(x_2,y_2)\big)=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}.
+\]
+Take an arbitrary point \(p=(x,y)\in (a_1,b_1)\times(a_2,b_2)\). Then
+\[
+a_1 < x < b_1,\qquad a_2 < y < b_2.
+\]
+Define the four positive distances to the endpoints:
+\[
+d_1 = x - a_1,\quad d_2 = b_1 - x,\quad d_3 = y - a_2,\quad d_4 = b_2 - y.
+\]
+Let
+\[
+r = \min\{d_1,d_2,d_3,d_4\}>0.
+\]
+We claim that the open ball \(B(p,r)=\{q\in\mathbb{R}^2 : d(p,q)<r\}\) is contained in \((a_1,b_1)\times(a_2,b_2)\).
+
+Indeed, take any point \(q=(u,v)\in B(p,r)\). Then
+\[
+|u-x|\le d(p,q)<r,\qquad |v-y|\le d(p,q)<r.
+\]
+Hence
+\[
+x-r < u < x+r,\qquad y-r < v < y+r.
+\]
+Because \(r\le x-a_1\) and \(r\le b_1-x\), we have
+\[
+a_1 \le x-r < u < x+r \le b_1,
+\]
+so \(u\in(a_1,b_1)\). Similarly, \(r\le y-a_2\) and \(r\le b_2-y\) imply
+\[
+a_2 \le y-r < v < y+r \le b_2,
+\]
+so \(v\in(a_2,b_2)\). Consequently \(q=(u,v)\in(a_1,b_1)\times(a_2,b_2)\).
+
+Thus every point of the product has an open neighbourhood (an open ball) contained in the product. By definition, \((a_1,b_1)\times(a_2,b_2)\) is open in \(\mathbb{R}^2\).
+\end{proof}
+\end{example}
+
+\begin{definition}[Closed set]
+	A closed set $A$ is defined by its ability to contain all of its limit points, meaning if a sequence of points $\{x_n\}$ within $A$ converges to a limit $x$, then that limit $x$ must also be in $A$.
+\end{definition}
+
+\begin{definition}[Sequence]
+	A sequence is a function whose domain is $\N$.
+\end{definition}
