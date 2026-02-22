@@ -17,7 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage{setspace}
 \usepackage{graphicx}
-
+\usepackage{xfrac}
 % =========================
 % Page Style
 % =========================
@@ -86,74 +86,5 @@
 % =========================
 \input{Lectures/Lecture-1.tex}
 \input{Lectures/Lecture-2.tex}
-% \begin{definition}[Metric Space]
-% Let $X$ be a set. A function
-% \[
-% d : X \times X \to \R
-% \]
-% is called a \emph{metric} if for all $x,y,z \in X$:
-% \begin{enumerate}[label=(\roman*)]
-%     \item $d(x,y) \ge 0$ and $d(x,y)=0$ iff $x=y$,
-%     \item $d(x,y)=d(y,x)$,
-%     \item $d(x,z) \le d(x,y)+d(y,z)$.
-% \end{enumerate}
-% \end{definition}
-
-% \begin{example}
-% The function
-% \[
-% d(x,y) = |x-y|
-% \]
-% defines a metric on $\R$.
-% \end{example}
-
-% \section{Main Results}
-
-% \begin{theorem}[Triangle Inequality in $\R^n$]
-% For all $x,y \in \R^n$,
-% \[
-% \|x+y\| \le \|x\| + \|y\|.
-% \]
-% \end{theorem}
-
-% \begin{proof}
-% Let $x,y \in \R^n$. Using the dot product,
-% \[
-% \|x+y\|^2 = \|x\|^2 + \|y\|^2 + 2\langle x,y\rangle.
-% \]
-% By the Cauchy–Schwarz inequality,
-% \[
-% \langle x,y\rangle \le \|x\|\,\|y\|.
-% \]
-% Hence,
-% \[
-% \|x+y\|^2 \le (\|x\|+\|y\|)^2.
-% \]
-% Taking square roots gives the result.
-% \end{proof}
-
-% \section{Worked Problems}
-
-% \begin{problem}
-% Show that $d(x,y)=\min\{1,|x-y|\}$ defines a metric on $\R$.
-% \end{problem}
-
-% \begin{proof}
-% Non-negativity and symmetry are immediate.  
-% For the triangle inequality, observe that
-% \[
-% |x-z| \le |x-y| + |y-z|
-% \]
-% and apply the monotonicity of $\min\{1,t\}$.
-% \end{proof}
-
-% \section{Remarks and Further Discussion}
-
-% \begin{remark}
-% Different choices of metrics can induce the same topology but lead to different geometric properties.
-% \end{remark}
-
-% =========================
-% End
-% =========================
+\input{Lectures/Lecture-3.tex}
 \end{document}
