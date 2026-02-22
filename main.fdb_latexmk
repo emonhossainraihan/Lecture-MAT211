@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1771802439.16355 "main.tex" "main.pdf" "main" 1771802440.60208 0
+["pdflatex"] 1771802876.89155 "main.tex" "main.pdf" "main" 1771802878.17564 0
   "/opt/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1747636920 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1747636920 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/opt/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1747636920 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -230,15 +230,15 @@
   "/opt/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1747636920 5523527 fc52724bfdfed28efb1c23347288a386 ""
   "/opt/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1747636920 3569781 4708bdf33bf39f2761d4e1761d9e8376 ""
   "/opt/texlive/2025/texmf.cnf" 1747636920 585 81f10441804f05cc9107aafbbb0bcd23 ""
-  "Lectures/Lecture-1.tex" 1771102203.9283 3542 ddc674ed225eb09c07f47811e1bfd241 ""
+  "Lectures/Lecture-1.tex" 1771802870.4321 3542 ddc674ed225eb09c07f47811e1bfd241 ""
   "Lectures/Lecture-2.tex" 1771102807.17999 4925 e50872c514a80a253ff862c0372c3280 ""
   "Lectures/Lecture-3.tex" 1771802438.96015 5562 fe59425f26b8a7ee6ee359e7d045c6b2 ""
   "Lectures/images/bounded-1.png" 1771799066.01802 93690 451ae9ac0e00f4d79695ce8cb0e455d5 ""
   "Lectures/images/open-set.jpg" 1771102203.9283 55486 c990a586d3617b6738ecc5c5f75af026 ""
-  "main.aux" 1771802440.51347 580 2dcd3187fc1ef1f6584bb9baa827b9b0 "pdflatex"
-  "main.out" 1771802440.51347 279 b3f1c6a5f228dba5c4c0b0140be05ff0 "pdflatex"
-  "main.tex" 1771801723.42243 2062 5a1152395bc2baa51cb68c36bbd3548f ""
-  "main.toc" 1771802440.51347 198 1179b133ba7526cf3c2c13b35c6c3431 "pdflatex"
+  "main.aux" 1771802878.10541 580 2dcd3187fc1ef1f6584bb9baa827b9b0 "pdflatex"
+  "main.out" 1771802878.10541 279 b3f1c6a5f228dba5c4c0b0140be05ff0 "pdflatex"
+  "main.tex" 1771802864.68545 2062 5a1152395bc2baa51cb68c36bbd3548f ""
+  "main.toc" 1771802878.10541 198 1179b133ba7526cf3c2c13b35c6c3431 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
