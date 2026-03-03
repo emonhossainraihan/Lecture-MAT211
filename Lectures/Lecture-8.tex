@@ -8,6 +8,7 @@ if there exists a real number $L$ such that
 \]
 Then the number $L$ is called the \emph{derivative} of $f$ at $x=a$.
 \end{definition}
+
 The definition indicates that,
 $$f(a+h)=f(a)+Lh+o(h)$$
 So, near $x=a$, the function $f$ behaves like a linear function with slope $L$, $f(a+h) \approx f(a) + Lh=\text{base point}+\text{linear correction}$. The derivative only captures the linear correction part. The constant term just shifts the graph vertically.
@@ -78,6 +79,13 @@ So, near $x=a$, the function $f$ behaves like a linear function with slope $L$, 
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\textbf{Remark:} The notation $o(h)$ means that 
+the error term $E(h)=f(a+h)-f(a)-Lh$ is small compared 
+to $h$ as $h \to 0$. More precisely, it means that 
+$\lim_{h\to 0} E(h)/h=0$. In other words, $E(h)$ goes to 
+zero faster than $h$ does. Formally, we say a function $E(h)$
+is $o(h)$ if $$\lim_{h\to 0} E(h)/h=0.$$ In one variable 
+$h^2=o(h)$, $h^3=o(h)$, but $2h$ is not $o(h)$ because $\lim_{h\to 0} 2h/h=2 \neq 0$.
 
 \begin{definition}
 A function $f:\mathbb{R}^n \to \mathbb{R}^m$ 
@@ -99,25 +107,6 @@ and is often denoted by $Df(\vec a)$.
 \end{definition}
 Again, this says that $Df(\vec a)$ is the best linear approximation to the function $f-f(\vec a)$ at $\vec a$,
 in the sense that the difference $f(\vec a+\vec h)-f(\vec a)-Df(\vec a)(\vec h)$ is small compared to $\|\vec h\|$ as $\vec h \to 0$.
-\begin{proposition}
-    If $f: A \subseteq \R^n \rightarrow \R^m$ is differentiable at $x_0$, then $f$ is continuous at $x_0$.
-\end{proposition}
-\begin{proof}
-    By definition of the derivative of $f$ we know that the limit
-$$
-\lim_{h \rightarrow 0} \frac{|| f(x_0+h) - f(x_0) + D h || }{||h||} = 0,
-$$
-for some linear transformation $D$. Therefore since this limit exists, the following is true:
-$$
-0 = \left( \lim_{h \rightarrow 0} || h ||\right)\left( \lim_{h \rightarrow 0} \frac{|| f(x_0+h) - f(x_0) + D h || }{||h||} \right) = \lim_{h \rightarrow 0} ||f(x_0+h) - f(x_0) + Dh ||.
-$$
-By the triangle inequality,
-$$
-\lim_{h \rightarrow 0}||f(x_0+h) - f(x_0) || \leq \lim_{h \rightarrow 0}||f(x_0+h) - f(x_0) +Dh || + \lim_{h \rightarrow 0}||Dh || =\lim_{h \rightarrow 0}||Dh ||.
-$$
-But since $D$ is linear, it is continuous and $D0=0$, so the lattermost limit is just $0$. Thus $0$ is an upper bound for the limit, but since the norm is always non-negative, this implies that the limit is in fact $0$.
-\end{proof}
-
 
 \begin{proposition}
 Suppose there exist two linear transformations
@@ -235,3 +224,343 @@ Thus
 T_{\vec a}^{(2)}=T_{\vec a}^{(1)}.
 \]
 \end{proof}
+
+%  Example 1
+\begin{example}
+Consider the function $f:\R^2 \to \R$ defined by
+$$
+f(x,y) = x^2-y^2
+$$
+Find the derivative of $f$ at the point $\begin{pmatrix}
+2 \\ 3
+\end{pmatrix}$, find the value of $Df\begin{pmatrix}
+2 \\ 3
+\end{pmatrix}$.
+\end{example}
+\textbf{Solution.} Let $$Df\begin{pmatrix}2 \\ 3
+\end{pmatrix}=\begin{pmatrix}
+  a & b
+\end{pmatrix}$$
+Using the definition of differentiability, let $h=(h_1,h_2)\to(0,0)$. Then
+\begin{align*}
+&\lim_{\|\vec h\|\to 0}\frac{\left\|f\left(\begin{pmatrix}
+2\\3
+\end{pmatrix}+\begin{pmatrix}h_1\\h_2\end{pmatrix}\right)-f\begin{pmatrix}2\\3\end{pmatrix}-\begin{pmatrix}a&b\end{pmatrix}\begin{pmatrix}h_1\\h_2\end{pmatrix}\right\|}{\|\vec h\|}\\
+=&
+\lim_{\|\vec h\|\to 0}
+\frac{\left\|f\begin{pmatrix}2+h_1\\3+h_2\end{pmatrix}-f\begin{pmatrix}2\\3\end{pmatrix}-a h_1-b h_2\right\|}{\sqrt{h_1^2+h_2^2}}.  
+\end{align*}
+Compute:
+\[
+f(2+h_1,3+h_2)-f(2,3)
+=(2+h_1)^2-(3+h_2)^2-\bigl(2^2-3^2\bigr).
+\]
+and
+\[
+(2+h_1)^2-(3+h_2)^2-2^2+3^2
+= (4+4h_1+h_1^2)-(9+6h_2+h_2^2)-4+9
+=4h_1-6h_2+h_1^2-h_2^2.
+\]
+So the numerator becomes
+\[
+\left|(4-a)h_1-(6+b)h_2+h_1^2-h_2^2\right|.
+\]
+To make the linear terms vanish (\textcolor{red}{why?}), choose
+\[
+4-a=0\Rightarrow a=4,\qquad -(6+b)=0\Rightarrow b=-6.
+\]
+Then the limit reduces to
+\[
+\lim_{(h_1,h_2)\to(0,0)}\frac{|h_1^2-h_2^2|}{\sqrt{h_1^2+h_2^2}}
+\le
+\lim_{(h_1,h_2)\to(0,0)}\frac{h_1^2+h_2^2}{\sqrt{h_1^2+h_2^2}}
+=
+\lim_{(h_1,h_2)\to(0,0)}\sqrt{h_1^2+h_2^2}=0.
+\]
+Hence $f$ is differentiable at $(2,3)$ and
+\[
+Df\begin{pmatrix}2\\3\end{pmatrix}=\begin{pmatrix}4&-6\end{pmatrix}.
+\]
+
+\begin{example}
+For $f:\mathbb{R}^2\to\mathbb{R}^2$ given by
+\[
+f(x,y)=\binom{xy}{y^2},
+\]
+find the value of $Df\begin{pmatrix}
+a \\ b
+\end{pmatrix}$.
+\end{example}
+\textbf{Solution:} For $f:\mathbb{R}^2\to\mathbb{R}^2$ given by
+\[
+f(x,y)=\binom{xy}{y^2},
+\]
+the derivative at a point $\vec a=\begin{pmatrix}a\\b\end{pmatrix}$ is the linear map $Df\begin{pmatrix}
+a\\b
+\end{pmatrix}$ satisfying
+\[
+f\begin{pmatrix}a+h\\b+k\end{pmatrix}-f\begin{pmatrix}a\\b\end{pmatrix}=Df_{\vec a}\binom{h}{k}+o(\|(h,k)\|).
+\]
+We will see this definition can be used to compute the derivative without using the limit definition directly.
+Compute the increment:
+\[
+f\begin{pmatrix}a+h\\b+k\end{pmatrix}=\binom{(a+h)(b+k)}{(b+k)^2}
+=\binom{ab+ak+bh+hk}{b^2+2bk+k^2}.
+\]
+So
+\[
+f\begin{pmatrix}a+h\\b+k\end{pmatrix}-f\begin{pmatrix}a\\b\end{pmatrix}=\binom{ak+bh+hk}{2bk+k^2}.
+\]
+The linear part in $(h,k)$ is
+\[
+\binom{bh+ak}{2bk},
+\]
+and the remainder is
+\[
+\binom{hk}{k^2},
+\]
+\textcolor{red}{(you can skip to verify the error term is $o(\|(h,k)\|)$, but we will verify it for the sake of completeness)} whose norm is
+\\
+~\\
+which is $o(\|(h,k)\|)$ because $|hk|\le \tfrac12(h^2+k^2)$ and $|k^2|\le h^2+k^2$.
+\[
+\boxed{
+\begin{aligned}
+\text{Claim:}\quad &\sqrt{x^2+y^2}\le |x|+|y|.\\[4pt]
+\text{Proof:}\quad 
+&(|x|+|y|)^2
+= x^2+y^2+2|x||y|
+\ge x^2+y^2.\\[4pt]
+&\text{Since both sides are nonnegative, taking square roots gives}\\[4pt]
+&\sqrt{x^2+y^2}\le |x|+|y|.
+\end{aligned}
+}
+\]
+\[
+\|R(h,k)\|=\sqrt{(hk)^2+(k^2)^2}\le |hk|+|k^2|
+\le \frac{h^2+k^2}{2}+(h^2+k^2)=\frac{3}{2}(h^2+k^2)=\frac{3}{2}\|(h,k)\|^2.
+\]
+\[
+\frac{\|R(h,k)\|}{\|(h,k)\|}\le \frac{3}{2}\|(h,k)\|\to 0,
+\]
+Therefore,
+\[
+Df_{\vec a}\binom{h}{k}=\binom{bh+ak}{2bk},
+\]
+So the matrix of $Df_{\vec a}$ is
+\[
+Df_{\vec a}=
+\begin{pmatrix}
+b & a\\
+0 & 2b
+\end{pmatrix}.
+\]
+
+\begin{proposition}
+  If the function $f:U\subseteq \R^n \to \R$ is differentiable at $\vec a$, then the partial derivatives 
+  $\frac{\partial f}{\partial x_i}(\vec a)$ exists for all $i=1,2,\ldots,n$ and $Df(\vec a)$ is given by the row vector
+  \[
+  Df(\vec a) = \begin{pmatrix}
+  \frac{\partial f}{\partial x_1}(\vec a) & \frac{\partial f}{\partial x_2}(\vec a) & \cdots & \frac{\partial f}{\partial x_n}(\vec a)
+  \end{pmatrix}.
+  \]
+\end{proposition}
+\begin{proof}
+  $f$ is differentiable at $\vec a$ means that there exists a linear transformation $L\equiv Df(\vec a):\R^n \to \R$ such that
+  \[
+  f(\vec a+\vec h)=f(\vec a)+L(\vec h)+o(\|\vec h\|).
+  \]
+  where $\lim_{\|h\|\rightarrow 0} \frac{o(\|\vec h\|)}{\|\vec h\|}=0$. Suppose, 
+  $$L(\vec h)=L\begin{pmatrix}h_1\\h_2\\\vdots\\h_n\end{pmatrix}=\begin{pmatrix}
+  c_1 & c_2 & \cdots & c_n
+  \end{pmatrix}\begin{pmatrix}h_1\\h_2\\\vdots\\h_n\end{pmatrix}=c_1h_1+c_2h_2+\cdots+c_nh_n.$$
+  Now, we want to impose the definition in each of the coordinate directions. For $i=1,2,\ldots,n$, let $\vec h = t \vec e_i$ where $\vec e_i$ is the $i$-th standard basis vector. Then
+  \begin{align*}
+  f(\vec a+t\vec e_i)&=f(\vec a)+L(t\vec e_i)+o(\|t\vec e_i\|)\\
+  f(\vec a+t\vec e_i) - f(\vec a) &= t L(\vec e_i) + o(|t|)\\
+  \frac{f(\vec a+t\vec e_i) - f(\vec a)}{t} &= L(\vec e_i) + \frac{o(|t|)}{t}\\
+  \lim_{t \to 0} \frac{f(\vec a+t\vec e_i) - f(\vec a)}{t} &= L(\vec e_i) + \lim_{t \to 0} \frac{o(|t|)}{t}\\
+  \frac{\partial f}{\partial x_i}(\vec a) &= L(\vec e_i) = c_i.
+  \end{align*}
+\end{proof}
+\begin{proposition}
+  If the function $f:U\subseteq \R^n \to \R^m$ is differentiable at $\vec a$, then the partial derivatives 
+  $\frac{\partial f^j}{\partial x_i}(\vec a)$ exists for all $i=1,2,\ldots,n$, $j=1,2,\ldots,m$ and $Df(\vec a)$ is given by the matrix
+  \[
+  Df(\vec a) = \begin{pmatrix}
+  \frac{\partial f^1}{\partial x_1}(\vec a) & \frac{\partial f^1}{\partial x_2}(\vec a) & \cdots & \frac{\partial f^1}{\partial x_n}(\vec a)\\
+  \frac{\partial f^2}{\partial x_1}(\vec a) & \frac{\partial f^2}{\partial x_2}(\vec a) & \cdots & \frac{\partial f^2}{\partial x_n}(\vec a)\\
+  \vdots & \vdots & \ddots & \vdots \\
+  \frac{\partial f^m}{\partial x_1}(\vec a) & \frac{\partial f^m}{\partial x_2}(\vec a) & \cdots & \frac{\partial f^m}{\partial x_n}(\vec a)
+  \end{pmatrix}.
+  \]
+\end{proposition}
+% =========================================
+\begin{proposition}
+Let $f:\R^{k}\to\R^{n}$ be a differentiable map. For each $i\in\{1,\dots,n\}$ let
+\[
+\pi^i:\R^n\to\R,\qquad \pi^i(a^1,\dots,a^n)=a^i
+\]
+be the $i$-th coordinate projection, and define the $i$-th component function of $f$ by
+\[
+f^i := \pi^i\circ f:\R^k\to\R.
+\]
+Then for every $a\in\R^k$,
+\[
+D(f^i)(a) = \pi^i\circ Df(a).
+\]
+Equivalently, as linear maps $\R^k\to\R$,
+\[
+D(f^i)(a)[h] = \pi^i\big(Df(a)[h]\big)\qquad\text{for all }h\in\R^k.
+\]
+\end{proposition}
+\begin{proof}
+  See the proof from \url{https://math.stackexchange.com/a/4214572/1167703}.
+\end{proof}
+% \begin{proof}
+% By definition $f^i=\pi^i\circ f$. Since $f$ is differentiable at $a$ and $\pi^i$ is differentiable everywhere, the chain rule gives
+% \[
+% D(f^i)(a)=D(\pi^i\circ f)(a)=D\pi^i(f(a))\circ Df(a).
+% \]
+% Now observe that $\pi^i:\R^n\to\R$ is a linear transformation. A basic fact about differentiability is that if $L:\R^n\to\R^m$ is linear, then
+% \[
+% DL(x)=L \quad\text{for every }x\in\R^n.
+% \]
+% Applying this to $L=\pi^i$ yields $D\pi^i(f(a))=\pi^i$. Therefore,
+% \[
+% D(f^i)(a)=\pi^i\circ Df(a),
+% \]
+% as claimed. Writing this identity on an increment $h\in\R^k$ gives
+% \[
+% D(f^i)(a)[h]=(\pi^i\circ Df(a))[h]=\pi^i(Df(a)[h]).
+% \]
+% \end{proof}
+
+% \begin{remark}[What the notation means]
+% It is \emph{not} correct to write $\pi^i(f)=f^i$ without explanation: $\pi^i$ is a function $\R^n\to\R$ whose input is a point
+% $(a^1,\dots,a^n)$, not a function. The correct definition is
+% \[
+% f^i := \pi^i\circ f.
+% \]
+% \end{remark}
+
+% %------------------------------------------------------------
+% % Example 1: Spivak-style D as linear map (no matrices needed)
+% %------------------------------------------------------------
+% \begin{example}[A concrete computation with $D$ as a linear map]
+% Let $f:\R\to\R^2$ be defined by
+% \[
+% f(x)=(x^2,x).
+% \]
+% Then for each $a\in\R$, the total derivative $Df(a):\R\to\R^2$ is the linear map determined by
+% \[
+% Df(a)[h] = (2ah,\,h)\qquad (h\in\R).
+% \]
+% Let $\pi^1:\R^2\to\R$ be the projection $\pi^1(u,v)=u$. Then $f^1=\pi^1\circ f$ satisfies
+% \[
+% f^1(x)=\pi^1(x^2,x)=x^2.
+% \]
+% By the proposition,
+% \[
+% Df^1(a)[h] = \pi^1(Df(a)[h])=\pi^1(2ah,h)=2ah,
+% \]
+% so indeed $(f^1)'(a)=2a$.
+% \end{example}
+
+% %------------------------------------------------------------
+% % Example 2: Matrix viewpoint (prime notation)
+% %------------------------------------------------------------
+% \begin{example}[The same example using matrices]
+% Again let $f(x)=(x^2,x)$. Using standard bases, the Jacobian (matrix representation of $Df(a)$) is
+% \[
+% f'(a)=
+% \begin{pmatrix}
+% 2a\\[0.3ex]
+% 1
+% \end{pmatrix}
+% \qquad \text{(a $2\times 1$ matrix).}
+% \]
+% The projection $\pi^1:\R^2\to\R$ is linear, and its matrix (standard basis in $\R^2$ and $\{1\}$ in $\R$) is
+% \[
+% [\pi^1]_{\text{std}}=
+% \begin{pmatrix}
+% 1 & 0
+% \end{pmatrix}
+% \qquad \text{(a $1\times 2$ matrix).}
+% \]
+% The chain rule in matrix form gives
+% \[
+% (f^1)'(a) = (\pi^1)'(f(a))\, f'(a) = [\pi^1]_{\text{std}}\, f'(a)
+% =
+% \begin{pmatrix}
+% 1 & 0
+% \end{pmatrix}
+% \begin{pmatrix}
+% 2a\\[0.3ex]
+% 1
+% \end{pmatrix}
+% =2a.
+% \]
+% \end{example}
+
+% %------------------------------------------------------------
+% % Example 3: A higher-dimensional example to show the pattern
+% %------------------------------------------------------------
+% \begin{example}[General pattern in $\R^k\to\R^n$]
+% Let $f:\R^2\to\R^3$ be
+% \[
+% f(x,y)=(x^2+ y,\; xy,\; e^x).
+% \]
+% Then $f^2=\pi^2\circ f$ is the second component:
+% \[
+% f^2(x,y)=xy.
+% \]
+% The total derivative $Df(a,b):\R^2\to\R^3$ is given (on $(h_1,h_2)\in\R^2$) by
+% \[
+% Df(a,b)[h_1,h_2]=\big(2a\,h_1+h_2,\; b\,h_1+a\,h_2,\; e^a h_1\big).
+% \]
+% Applying the proposition with $\pi^2(u_1,u_2,u_3)=u_2$,
+% \[
+% Df^2(a,b)[h_1,h_2]=\pi^2(Df(a,b)[h_1,h_2])=b\,h_1+a\,h_2,
+% \]
+% which matches the usual gradient computation for $xy$.
+% \end{example}
+% =========================================
+\begin{proposition}
+    If $f: A \subseteq \R^n \rightarrow \R^m$ is differentiable at $x_0$, then $f$ is continuous at $x_0$.
+\end{proposition}
+\begin{proof}
+    By definition of the derivative of $f$ we know that the limit
+$$
+\lim_{h \rightarrow 0} \frac{|| f(x_0+h) - f(x_0) + D h || }{||h||} = 0,
+$$
+for some linear transformation $D$. Therefore since this limit exists, the following is true:
+$$
+0 = \left( \lim_{h \rightarrow 0} || h ||\right)\left( \lim_{h \rightarrow 0} \frac{|| f(x_0+h) - f(x_0) + D h || }{||h||} \right) = \lim_{h \rightarrow 0} ||f(x_0+h) - f(x_0) + Dh ||.
+$$
+By the triangle inequality,
+$$
+\lim_{h \rightarrow 0}||f(x_0+h) - f(x_0) || \leq \lim_{h \rightarrow 0}||f(x_0+h) - f(x_0) +Dh || + \lim_{h \rightarrow 0}||Dh || =\lim_{h \rightarrow 0}||Dh ||.
+$$
+But since $D$ is linear, it is continuous and $D0=0$, so the lattermost limit is just $0$. Thus $0$ is an upper bound for the limit, but since the norm is always non-negative, this implies that the limit is in fact $0$.
+\end{proof}
+
+\begin{proposition}
+  When $f$ is differentiable at $\vec a$, for any $\vec v$, 
+  the directional derivative of $f$ at $\vec a$ in the direction $\vec v$ exists and is given by
+  \[
+  D_{\vec v}f(\vec a) = Df(\vec a)(\vec v).
+  \]    
+\end{proposition}
+\begin{proof}
+  See the proof from Theodore Shifrin (Chapter 3, section 2, proposition 2.3). 
+\end{proof}
+\begin{proposition}
+  If $f: U \subseteq \R^n \rightarrow \R^m$ has continuous partial derivatives, then $f$ is differentiable.  
+\end{proposition}
+\begin{proof}
+  See the proof from Theodore Shifrin (Chapter 3, section 2, proposition 2.4). 
+\end{proof}
+
+% continuous partial DNI differentiability: https://mathinsight.org/differentiable_function_discontinuous_partial_derivatives
+ 

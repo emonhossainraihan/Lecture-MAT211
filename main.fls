@@ -423,6 +423,9 @@ INPUT .\Lectures\images\bounded-1.png
 INPUT .\Lectures\Lecture-8.tex
 INPUT .\Lectures\Lecture-8.tex
 INPUT Lectures\Lecture-8.tex
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmti8.tfm
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmti7.tfm
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmtt10.tfm
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -444,6 +447,8 @@ INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmsy10.pfb
@@ -452,5 +457,7 @@ INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmtt10.pfb
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmtt10.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\symbols\msbm10.pfb
