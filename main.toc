@@ -2,3 +2,6 @@
 \contentsline {section}{\numberline {2}Lecture-02}{4}{section.2}%
 \contentsline {section}{\numberline {3}Lecture-03}{7}{section.3}%
 \contentsline {section}{\numberline {4}Lecture-08}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Directional Derivative}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Tangent Space for $\mathbb R^2$}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Total Derivative}{12}{subsection.4.3}%

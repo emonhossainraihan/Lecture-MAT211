@@ -1,5 +1,176 @@
 \newpage
 \section{Lecture-08}
+\subsection{Directional Derivative}
+\begin{problem}
+  If $T(\vec x)$ is a linear transformation, then find the directional derivative of $T(\vec x)$ at $\vec x=\vec a$ in the direction $\vec{v}$.
+\end{problem}
+\begin{problem}
+  If $f:\R^n\to\R$ is defined by $f(\vec x)=\|\vec x\|^2$, find
+the directional derivative of $f$ at $\vec x=\vec a$ in the direction $\vec{v}$.
+\end{problem}
+\textbf{Solution: }
+\begin{align*}
+D_{\vec v}f(\vec a) &= \lim_{t\to 0} \frac{f(\vec a+t\vec v)-f(\vec a)}{t}\\
+&= \lim_{t\to 0} \frac{\|\vec a+t\vec v\|^2-\|\vec a\|^2}{t}\\
+&= \lim_{t\to 0} \frac{(\vec a+t\vec v)\cdot(\vec a+t\vec v)-\vec a\cdot \vec a}{t}\\
+&= \lim_{t\to 0} \frac{2t\vec a\cdot \vec v+t^2\|\vec v\|^2}{t}\\
+&= 2\vec a\cdot \vec v.
+\end{align*}
+\begin{example}
+Let
+\[
+f(x,y)=
+\begin{cases}
+\dfrac{x^3}{x^2+y^2}, & (x,y)\neq (0,0),\\[6pt]
+0, & (x,y)=(0,0),
+\end{cases}
+\]
+Find the partial derivatives and directional derivatives of $f$ at $(0,0)$.
+\end{example}
+Partial derivatives at \((0,0)\):
+\[
+f_x(0,0)=\lim_{h\to 0}\frac{f(h,0)-f(0,0)}{h}
+=\lim_{h\to 0}\frac{\frac{h^3}{h^2}-0}{h}
+=\lim_{h\to 0}\frac{h}{h}=1.
+\]
+
+\[
+f_y(0,0)=\lim_{k\to 0}\frac{f(0,k)-f(0,0)}{k}
+=\lim_{k\to 0}\frac{0-0}{k}=0.
+\]
+Directional derivative at \((0,0)\):
+Let \(\vec v=(a,b)\neq (0,0)\). Then
+\[
+D_{\vec v}f(0,0)
+=\lim_{t\to 0}\frac{f(ta,tb)-f(0,0)}{t}
+=\lim_{t\to 0}\frac{\frac{(ta)^3}{(ta)^2+(tb)^2}}{t}
+=\lim_{t\to 0}\frac{\frac{t^3a^3}{t^2(a^2+b^2)}}{t}
+=\frac{a^3}{a^2+b^2}.
+\]
+Equivalently, if \(\vec u=(u_1,u_2)\) is a unit direction, then
+\[
+D_{\vec u}f(0,0)=\frac{u_1^3}{u_1^2+u_2^2}=u_1^3\neq 0.
+\]
+\textbf{Question:} Does the existence of all directional derivatives at a point imply the existence of the total derivative at that point? The answer is no, as shown by the above example. The function $f$ has all directional derivatives at $(0,0)$, but it is not differentiable at $(0,0)$ because the limit in the definition of differentiability does not exist.
+
+
+\subsection{Tangent Space for $\mathbb R^2$}
+For a \emph{fixed} direction $v$, the directional derivative at $p$ defines a map
+\[
+D_v\big|_p: C^\infty(\mathbb{R}^2)\longrightarrow \mathbb{R},
+\qquad
+f\longmapsto D_v f(p),
+\]
+which is linear. Moreover, it satisfies the Leibniz rule
+\[
+D_v(fg)(p)=f(p)\,D_v g(p)+g(p)\,D_v f(p),
+\]
+so $D_v|_p$ is a \emph{derivation at $p$} (the ``tangent vector as operator'' viewpoint).
+\medskip
+The tangent space is \emph{not} built from one fixed operator $D_v|_p$; rather it is built from the collection of \emph{all} such derivations at $p$. A clean definition is
+\[
+T_p\mathbb{R}^2
+:=\Bigl\{\,X:C^\infty(\mathbb{R}^2)\to\mathbb{R}\ \Bigm|\ 
+X \text{ is linear and } X(fg)=f(p)X(g)+g(p)X(f)\Bigr\}.
+\]
+Elements of $T_p\mathbb{R}^2$ are operators that differentiate functions at $p$.
+Each direction $v=(v_1,v_2)\in\mathbb{R}^2$ produces an element
+\[
+v\longmapsto D_v\big|_p\in T_p\mathbb{R}^2.
+\]
+\medskip
+Define the standard derivations
+\[
+\left.\frac{\partial}{\partial x}\right|_p(f)=\frac{\partial f}{\partial x}(p),
+\qquad
+\left.\frac{\partial}{\partial y}\right|_p(f)=\frac{\partial f}{\partial y}(p).
+\]
+Then for $v=(v_1,v_2)$,
+\[
+D_v\big|_p
+=
+v_1\left.\frac{\partial}{\partial x}\right|_p
++
+v_2\left.\frac{\partial}{\partial y}\right|_p,
+\]
+so $\Bigl\{\left.\frac{\partial}{\partial x}\right|_p,\left.\frac{\partial}{\partial y}\right|_p\Bigr\}$
+is a basis of $T_p\mathbb{R}^2$.
+\medskip
+A tangent vector at $p$ can be viewed as an operator that takes a smooth function $f$ and returns its directional rate of change at $p$. The tangent space $T_p\mathbb{R}^2$ is the vector space of all such derivative-operators (derivations), and in coordinates it has basis $\left.\frac{\partial}{\partial x}\right|_p,\left.\frac{\partial}{\partial y}\right|_p$.
+\begin{example}
+  Let $f(x,y)=3x-2y$ and $p=(1,1)$.
+For $v=(1,0)$ and $w=(0,1)$,
+\[
+D_v\big|_p(f)=\frac{\partial f}{\partial x}(p)=3,
+\qquad
+D_w\big|_p(f)=\frac{\partial f}{\partial y}(p)=-2.
+\]
+For $u=(2,5)$,
+\[
+D_u\big|_p(f)=2\cdot 3+5\cdot(-2)=6-10=-4.
+\]
+Equivalently,
+\[
+D_u\big|_p
+=
+2\left.\frac{\partial}{\partial x}\right|_p
++
+5\left.\frac{\partial}{\partial y}\right|_p.
+\]
+\end{example}
+\begin{example}
+Let $f(x,y)=x^2+y^2$ and $p=(1,2)$. Then
+\[
+f_x=2x,\qquad f_y=2y
+\quad\Rightarrow\quad
+f_x(p)=2,\ \ f_y(p)=4.
+\]
+For $v=(3,-1)$,
+\[
+D_v\big|_p(f)=3\cdot 2+(-1)\cdot 4=6-4=2,
+\qquad\text{hence}\qquad
+D_{(3,-1)}\big|_p
+=
+3\left.\frac{\partial}{\partial x}\right|_p
+-
+\left.\frac{\partial}{\partial y}\right|_p.
+\]
+\end{example}
+\begin{example}
+From the previous example, for $v=(1,0)$ and $w=(0,1)$,
+\[
+D_v\big|_p(f)=2,\qquad D_w\big|_p(f)=4.
+\]
+Since $v+w=(1,1)$,
+\[
+D_{v+w}\big|_p(f)=1\cdot 2+1\cdot 4=6,
+\qquad\text{and indeed}\qquad
+D_{v+w}\big|_p(f)=D_v\big|_p(f)+D_w\big|_p(f).
+\]
+\end{example}
+\begin{example}
+Let $f(x,y)=x$, $g(x,y)=y^2$, $p=(1,2)$, and $v=(3,-1)$.
+Then
+\[
+D_v\big|_p(f)=3,
+\qquad
+D_v\big|_p(g)=(-1)\cdot (2y)\big|_{(1,2)}=-4.
+\]
+For the product $fg=xy^2$, compute
+\[
+(xy^2)_x=y^2,\qquad (xy^2)_y=2xy,
+\]
+so at $(1,2)$ we have $D(fg)(1,2)=(4,4)$ and hence
+\[
+D_v\big|_p(fg)=(4,4)\cdot(3,-1)=12-4=8.
+\]
+On the other hand,
+\[
+f(p)\,D_v\big|_p(g)+g(p)\,D_v\big|_p(f)
+=(1)(-4)+(4)(3)=-4+12=8,
+\]
+\end{example}
+\subsection{Total Derivative}
 \begin{definition}
 A function $f:\mathbb{R}\to\mathbb{R}$ is called \emph{differentiable at $x=a$}
 if there exists a real number $L$ such that
@@ -544,7 +715,63 @@ $$
 $$
 But since $D$ is linear, it is continuous and $D0=0$, so the lattermost limit is just $0$. Thus $0$ is an upper bound for the limit, but since the norm is always non-negative, this implies that the limit is in fact $0$.
 \end{proof}
-
+% =======================================
+\begin{example}
+\[
+f(x,y,z)=x^2+y^2+z^2.
+\]
+Take 
+\[
+\vec a=(1,1,1).
+\]
+\[
+Df(x,y,z)=(2x,2y,2z).
+\]
+\[
+Df(1,1,1)=(2,2,2).
+\]
+Thus, for $\vec v=(v_1,v_2,v_3)$,
+\[
+Df(1,1,1)(\vec v)
+=
+2v_1+2v_2+2v_3.
+\]
+\[
+D_{\vec v}f(1,1,1)
+=
+\lim_{t\to0}
+\frac{(1+tv_1)^2+(1+tv_2)^2+(1+tv_3)^2-3}{t}.
+\]
+Expanding,
+\[
+(1+tv_1)^2+(1+tv_2)^2+(1+tv_3)^2
+=
+3+2t(v_1+v_2+v_3)+O(t^2).
+\]
+Therefore,
+\[
+D_{\vec v}f(1,1,1)
+=
+\lim_{t\to0}
+\frac{3+2t(v_1+v_2+v_3)+O(t^2)-3}{t}
+=
+2(v_1+v_2+v_3).
+\]
+Hence,
+\[
+D_{\vec v}f(\vec a)=Df(\vec a)(\vec v).
+\]
+\end{example}
+~\\
+If $f$ is differentiable at $\vec a$, then
+\begin{align*}
+f(\vec a+\vec h)&=f(\vec a)+Df(\vec a)(\vec h)+o(|\vec h|)\\
+\stackrel{\vec h=t\vec v}{\implies}\frac{f(\vec a+t\vec v)-f(\vec a)}{t}&=Df(\vec a)(\vec v)+\frac{o(t|\vec v|)}{t}.
+\end{align*}
+As $t\to0$, the error term goes to $0$, giving
+\[
+D_{\vec v}f(\vec a)=Df(\vec a)(\vec v).
+\]
 \begin{proposition}
   When $f$ is differentiable at $\vec a$, for any $\vec v$, 
   the directional derivative of $f$ at $\vec a$ in the direction $\vec v$ exists and is given by
@@ -555,6 +782,62 @@ But since $D$ is linear, it is continuous and $D0=0$, so the lattermost limit is
 \begin{proof}
   See the proof from Theodore Shifrin (Chapter 3, section 2, proposition 2.3). 
 \end{proof}
+
+%------------------------------------------------------------
+% Properties of directional derivatives (LaTeX snippet)
+%------------------------------------------------------------
+% ~\\
+% Let $f,g:\mathbb{R}^n\to\mathbb{R}$, let $p\in\mathbb{R}^n$, and let $v\in\mathbb{R}^n$.
+% The \emph{directional derivative} of $f$ at $p$ in the direction $v$ is
+% \[
+% D_v f(p)\;:=\;\left.\frac{d}{dt}\right|_{t=0}\, f(p+t\,v),
+% \]
+% whenever the limit exists. Because,
+% \begin{align*}
+%   \frac{d}{dt}f(p+tv) &= \lim_{h\to0}\frac{f(p+(t+h)v)-f(p+tv)}{h}\\
+%   \left.\frac{d}{dt}f(p+tv)\right|_{t=0} &= \lim_{h\to0}\frac{f(p+hv)-f(p)}{h}\\
+%   &= D_v f(p).
+% \end{align*} 
+% \bigskip
+% \noindent\textbf{(1) Linearity in the function.}
+% If $D_v f(p)$ and $D_v g(p)$ exist, then for all scalars $\alpha,\beta\in\mathbb{R}$,
+% \[
+% D_v(\alpha f+\beta g)(p)=\alpha\,D_v f(p)+\beta\,D_v g(p).
+% \]
+% \medskip
+% \noindent\textbf{(2) Product rule (Leibniz rule).}
+% If $D_v f(p)$ and $D_v g(p)$ exist, then
+% \[
+% D_v(fg)(p)=f(p)\,D_v g(p)+g(p)\,D_v f(p).
+% \]
+% \medskip
+% \noindent\textbf{(3) Quotient rule.}
+% If $g(p)\neq 0$ and $D_v f(p),D_v g(p)$ exist, then
+% \[
+% D_v\!\left(\frac{f}{g}\right)(p)=\frac{g(p)\,D_v f(p)-f(p)\,D_v g(p)}{(g(p))^2}.
+% \]
+% \medskip
+% \noindent\textbf{(4) Chain rule (one-variable outer function).}
+% If $\phi:\mathbb{R}\to\mathbb{R}$ is differentiable at $f(p)$ and $D_v f(p)$ exists, then
+% \[
+% D_v(\phi\circ f)(p)=\phi'(f(p))\,D_v f(p).
+% \]
+% \medskip
+% \noindent\textbf{(5) Scaling in the direction.}
+% For any scalar $c\in\mathbb{R}$ (whenever $D_v f(p)$ exists),
+% \[
+% D_{c v} f(p)=c\,D_v f(p).
+% \]
+% \medskip
+% \noindent\textbf{(6) Additivity/linearity in the direction (requires differentiability).}
+% If $f$ is differentiable at $p$, then for all $v,w\in\mathbb{R}^n$ and all $a,b\in\mathbb{R}$,
+% \[
+% D_{v+w} f(p)=D_v f(p)+D_w f(p),
+% \qquad\text{and more generally}\qquad
+% D_{a v+b w} f(p)=a\,D_v f(p)+b\,D_w f(p).
+% \]
+
+
 \begin{proposition}
   If $f: U \subseteq \R^n \rightarrow \R^m$ has continuous partial derivatives, then $f$ is differentiable.  
 \end{proposition}

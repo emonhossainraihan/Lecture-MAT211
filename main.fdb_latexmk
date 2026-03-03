@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1772559392.66262 "c:/Users/Admin/Downloads/Lecture-MAT211/main.tex" "main.pdf" "main" 1772559394.08096 0
-  "C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1772513606 83788 3e06ff692e1323f668f12ea28ca579e9 ""
+["pdflatex"] 1772567034.94639 "c:/Users/Admin/Downloads/Lecture-MAT211/main.tex" "main.pdf" "main" 1772567036.42856 0
+  "C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1772560003 83788 3e06ff692e1323f668f12ea28ca579e9 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1744346720 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1771071748 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/Admin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1761587135 13313691 53087a5f38a0f99d768bfc5c779b911b ""
@@ -232,14 +232,14 @@
   "Lectures/Lecture-1.tex" 1771071717 3635 ddc674ed225eb09c07f47811e1bfd241 ""
   "Lectures/Lecture-2.tex" 1771138062 5052 e50872c514a80a253ff862c0372c3280 ""
   "Lectures/Lecture-3.tex" 1771876323 5664 fe59425f26b8a7ee6ee359e7d045c6b2 ""
-  "Lectures/Lecture-8.tex" 1772559392 17866 88916d316d465ed1690d35714ac5a2d7 ""
+  "Lectures/Lecture-8.tex" 1772567034 26262 c4b9d3d09bd9e3dfd3245e704392c49f ""
   "Lectures/images/bounded-1.png" 1771876323 93690 490d19133480cbc0202bb17bb7465fed ""
   "Lectures/images/open-set.jpg" 1771071717 55486 300badaaae95bbd614e1e04f23483eb3 ""
   "c:/Users/Admin/Downloads/Lecture-MAT211/main.tex" 1772513631 2184 910853933981084cbe57078cfe57caec ""
-  "main.aux" 1772559393 689 4caa088b70ff86f342e532fdb1d2e629 "pdflatex"
-  "main.out" 1772559393 372 d0185c30795c9748f94730095e007e18 "pdflatex"
+  "main.aux" 1772567036 1083 0ed03e187a665e0b2466f9cbf9727528 "pdflatex"
+  "main.out" 1772567036 848 cbc0018edee7826273ddbf5835076ef4 "pdflatex"
   "main.tex" 1772513631 2184 910853933981084cbe57078cfe57caec ""
-  "main.toc" 1772559393 265 a31fc52e20a6e393082ef697ad5b20dd "pdflatex"
+  "main.toc" 1772567036 535 26bfef08b5194a9518ae1fbe7b3de3fa "pdflatex"
   (generated)
   "main.aux"
   "main.log"

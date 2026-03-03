@@ -351,11 +351,6 @@ INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmbx10.tfm
-OUTPUT main.toc
-INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT .\Lectures\Lecture-1.tex
-INPUT .\Lectures\Lecture-1.tex
-INPUT Lectures\Lecture-1.tex
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmmi10.tfm
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmsy10.tfm
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmex10.tfm
@@ -364,6 +359,11 @@ INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmmib10.tfm
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+OUTPUT main.toc
+INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT .\Lectures\Lecture-1.tex
+INPUT .\Lectures\Lecture-1.tex
+INPUT Lectures\Lecture-1.tex
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmcsc10.tfm
 INPUT .\Lectures\Lecture-2.tex
 INPUT .\Lectures\Lecture-2.tex
