@@ -66,6 +66,21 @@ which is linear. Moreover, it satisfies the Leibniz rule
 D_v(fg)(p)=f(p)\,D_v g(p)+g(p)\,D_v f(p),
 \]
 so $D_v|_p$ is a \emph{derivation at $p$} (the ``tangent vector as operator'' viewpoint).
+
+\begin{definition}
+A derivation is a linear map
+\[
+X : C^\infty(\mathbb R^2) \to \mathbb{R}
+\]
+acting on smooth functions, satisfying the
+Leibniz rule:
+\[
+X(fg) = X(f)g + fX(g).
+\]
+It generalizes the concept of a tangent vector as an operator, mapping a
+function to its directional derivative at a specific point or over a region.
+\end{definition}
+
 \medskip
 The tangent space is \emph{not} built from one fixed operator $D_v|_p$; rather it is built from the collection of \emph{all} such derivations at $p$. A clean definition is
 \[
@@ -170,6 +185,19 @@ f(p)\,D_v\big|_p(g)+g(p)\,D_v\big|_p(f)
 =(1)(-4)+(4)(3)=-4+12=8,
 \]
 \end{example}
+~\\
+Tangent spaces let us define:
+\begin{enumerate}
+  \item Derivatives
+  \item Gradients
+  \item Vector fields
+  \item Flows
+  \item Differential equations
+\end{enumerate}
+
+
+% =============================================================================
+
 \subsection{Total Derivative}
 \begin{definition}
 A function $f:\mathbb{R}\to\mathbb{R}$ is called \emph{differentiable at $x=a$}
@@ -759,9 +787,10 @@ D_{\vec v}f(1,1,1)
 \]
 Hence,
 \[
-D_{\vec v}f(\vec a)=Df(\vec a)(\vec v).
+\boxed{D_{\vec v}f(\vec a)=Df(\vec a)(\vec v)}
 \]
 \end{example}
+\noindent\rule{\linewidth}{0.4pt}
 ~\\
 If $f$ is differentiable at $\vec a$, then
 \begin{align*}
