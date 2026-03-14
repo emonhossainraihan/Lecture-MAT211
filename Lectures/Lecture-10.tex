@@ -1,3 +1,351 @@
 \newpage
 \section{Lecture-10}
 \subsection{Chain Rule}
+The chain rule exists for differentiating a function of another
+function. If you want to learn more about the partial
+derivative of functions of functions, check out \url{https://math.stackexchange.com/questions/3266639/notation-for-partial-derivative-of-functions-of-functions/}.
+
+\begin{definition}
+    The simplest form of the chain rule is for real-valued functions of one real variable. It states that if $g$ is a function that is differentiable at a point $c$ (i.e.\ the derivative $g'(c)$ exists) and $f$ is a function that is differentiable at $g(c)$, then the composite function $f \circ g$ is differentiable at $c$, and the derivative is
+\[
+(f \circ g)'(c) = f'(g(c)) \cdot g'(c).
+\]
+
+The rule is sometimes abbreviated as
+\[
+(f \circ g)' = (f' \circ g)\cdot g'.
+\]
+
+If $y=f(u)$ and $u=g(x)$, then this abbreviated form is written in Leibniz notation as:
+\[
+\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}.
+\]
+
+The points where the derivatives are evaluated may also be stated explicitly:
+\[
+\left.\frac{dy}{dx}\right|_{x=c}
+=
+\left.\frac{dy}{du}\right|_{u=g(c)}
+\cdot
+\left.\frac{du}{dx}\right|_{x=c}.
+\]
+\end{definition}
+\begin{example}
+    \[
+f(x)=(4x-1)^{17}
+\]
+\[
+\text{Let } u=4x-1.
+\]
+\[
+\frac{d}{dx}(u^{17})=17u^{16}\frac{du}{dx},\qquad \frac{du}{dx}=4
+\]
+\[
+f'(x)=17(4x-1)^{16}\cdot 4=68(4x-1)^{16}
+\]
+Remark: We could expand $(4x-1)^{17}$ first and avoid the chain rule. Avoiding the chain rule is called the pain rule.
+\end{example}
+\begin{theorem}
+Let $U\subset \mathbb{R}^n$, $V\subset \mathbb{R}^m$ be open sets, let
+$g:U\to V$ and $f:V\to \mathbb{R}^p$ be mappings, and let $a$ be a point of $U$.
+If $g$ is differentiable at $a$ and $f$ is differentiable at $g(a)$,
+then the composition $f\circ g$ is differentiable at $a$, and its derivative is given by
+\[
+D(f\circ g)(a) = Df(g(a))\circ Dg(a).
+\]
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=1]
+
+% Left shape U
+\draw (0,0) ellipse (1.6 and 1.2);
+\node at (0,-0.9) {$U$};
+
+\fill (0,0) circle (1.5pt);
+\node[below] at (0,0) {$a$};
+
+\draw[->,thick] (0,0) -- (1,0) node[right] {$\vec v$};
+\draw[->,thick] (0,0) -- (0,0.95) node[above] {$\vec w$};
+
+% Arrow g
+\draw[->,thick] (1.9,0) -- (3.2,0);
+\node[above] at (2.55,0) {$g$};
+
+% Middle shape V
+\draw[smooth cycle,tension=0.9]
+  plot coordinates {
+    (4.0,0.2)
+    (4.3,1.1)
+    (5.2,1.0)
+    (5.7,0.4)
+    (5.5,-0.8)
+    (4.6,-1.2)
+    (3.9,-0.6)
+  };
+\node at (4.8,-1.0) {$V$};
+
+\fill (4.7,0) circle (1.5pt);
+\node[below left] at (4.7,0) {$g(a)=b$};
+
+\draw[->,thick] (4.7,0) -- (5.35,-0.2)
+  node[midway, below right] {$[Dg(a)](\vec v)$};
+\draw[->,thick] (4.7,0) -- (5.05,0.75)
+  node[midway, above left] {$[Dg(a)](\vec w)$};
+
+% Arrow f
+\draw[->,thick] (6.1,0) -- (7.4,0);
+\node[above] at (6.75,0) {$f$};
+
+% Right shape
+\draw[smooth cycle,tension=0.9]
+  plot coordinates {
+    (8.3,0.3)
+    (8.6,1.3)
+    (9.8,1.4)
+    (10.4,0.5)
+    (10.3,-0.9)
+    (9.3,-1.5)
+    (8.4,-0.8)
+  };
+
+\fill (9.4,-0.1) circle (1.5pt);
+\node[left] at (9.35,-0.1) {$f(b)$};
+
+\draw[->,thick] (9.4,-0.1) -- (10.15,-0.4)
+  node[midway, below right] {$[Df(b)][Dg(a)]\vec v$};
+
+\draw[->,thick] (9.4,-0.1) -- (9.0,0.95)
+  node[midway, above left] {$[Df(b)][Dg(a)]\vec w$};
+\end{tikzpicture}
+\end{center}
+\end{theorem}
+\begin{proof}
+    Will be added soon.
+\end{proof}
+There are three standard forms of the multivariable chain rule, 
+distinguished by the dimensions of the domain and codomain.
+~\\
+\textbf{1. \(\mathbb R \xrightarrow{\varphi} \mathbb R^n \xrightarrow{f} \mathbb R\)}\\
+Here
+\[
+\varphi(t)=(x_1(t),\dots,x_n(t)),\qquad f:\mathbb R^n\to\mathbb R.
+\]
+Then \(f\circ\varphi\) is a real-valued function of one variable:
+\[
+(f\circ\varphi)(t)=f(x_1(t),\dots,x_n(t)).
+\]
+By the chain rule,
+\[
+\frac{d}{dt}f(\varphi(t))
+=
+\sum_{i=1}^n
+\frac{\partial f}{\partial x_i}(\varphi(t))\,x_i'(t).
+\]
+This describes the derivative of a scalar field along a curve.
+\medskip
+~\\
+\textbf{2. \(\mathbb R^n \xrightarrow{g} \mathbb R^m \xrightarrow{f} \mathbb R\)}\\
+Here
+\[
+g=(g_1,\dots,g_m):\mathbb R^n\to\mathbb R^m,\qquad f:\mathbb R^m\to\mathbb R.
+\]
+Then
+\[
+(f\circ g)(x)=f(g_1(x),\dots,g_m(x)).
+\]
+The chain rule gives
+\[
+D(f\circ g)(a)=Df(g(a))\,Dg(a).
+\]
+In coordinates,
+\[
+\frac{\partial (f\circ g)}{\partial x_j}(a)
+=
+\sum_{i=1}^m
+\frac{\partial f}{\partial y_i}(g(a))
+\frac{\partial g_i}{\partial x_j}(a),
+\qquad j=1,\dots,n.
+\]
+This is the scalar-valued multivariable chain rule.
+\medskip
+~\\
+\textbf{3. \(\mathbb R^n \xrightarrow{g} \mathbb R^m \xrightarrow{f} \mathbb R^l\)}\\
+This is the most general case. Let
+\[
+g:\mathbb R^n\to\mathbb R^m,\qquad f:\mathbb R^m\to\mathbb R^l.
+\]
+Then
+\[
+f\circ g:\mathbb R^n\to\mathbb R^l.
+\]
+The chain rule is
+\[
+D(f\circ g)(a)=Df(g(a))\,Dg(a).
+\]
+If
+\[
+f=(f_1,\dots,f_l),
+\]
+then componentwise
+\[
+\frac{\partial (f_r\circ g)}{\partial x_j}(a)
+=
+\sum_{i=1}^m
+\frac{\partial f_r}{\partial y_i}(g(a))
+\frac{\partial g_i}{\partial x_j}(a),
+\qquad r=1,\dots,l,\quad j=1,\dots,n.
+\]
+So the derivative of the composition is obtained by multiplying the Jacobian matrices.
+\begin{center}
+\begin{forest} for tree={
+    edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+}
+[Multivariable Chain Rule
+[
+$\mathbb R\stackrel{\varphi}{\longrightarrow}\mathbb R^n\stackrel{f}{\longrightarrow}\mathbb R$
+] 
+[
+$\mathbb R^n\stackrel{g}{\longrightarrow}\mathbb R^m\stackrel{f}{\longrightarrow}\mathbb R$
+]
+[
+$\mathbb R^n\stackrel{g}{\longrightarrow}\mathbb R^m\stackrel{f}{\longrightarrow}\mathbb R^l$
+]
+]]
+\end{forest}
+\end{center}
+\begin{example}
+    The $(x,y)$ coordinates of a rollar coaster at time $t$ are given by $(\cos t, \sin t)$ and its height at
+    $(x,y)$ is given by $z=x^2y+x+1$. What is its rate of change in height with respect to time at $t$?
+    \begin{center}
+        \includegraphics[width=\textwidth]{images/rollar.png}
+    \end{center}
+    \textbf{Approach-1:} We can write the height as a function of time by substituting $x=\cos t$ and $y=\sin t$:
+\[
+z(t) = (\cos t)^2 \sin t + \cos t + 1.
+\]
+Then we can differentiate $z(t)$ with respect to $t$:
+\[
+z'(t) = 2(\cos t)(-\sin t)\sin t + (\cos t)^2 \cos t - \sin t.
+\]
+\textbf{Approach-2:} We can also use the multivariable chain rule.
+\begin{center}
+\begin{forest} for tree={
+    edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+}
+[$z$
+[
+$x$
+[$t$]
+] 
+[
+$y$
+[$t$]
+]
+]]
+\end{forest}
+\end{center}
+Here, $z$ is a function of $x$ and $y$, and both $x$ and $y$ are functions of $t$. By the multivariable chain rule, we have
+\[
+\frac{dz}{dt} = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt}.
+\]
+Calculating the partial derivatives, we get
+\[
+\frac{\partial z}{\partial x} = 2xy + 1, \qquad \frac{\partial z}{\partial y} = x^2.
+\]
+Calculating the derivatives of $x$ and $y$ with respect to $t$, we have
+\[
+\frac{dx}{dt} = -\sin t, \qquad \frac{
+dy}{dt} = \cos t.
+\]
+Substituting these into the chain rule formula, we get
+\[
+\frac{dz}{dt} = (2xy + 1)(-\sin t) + (x^2)(\cos t).
+\]
+Finally, substituting $x = \cos t$ and $y = \sin t$, we find
+\[
+\frac{dz}{dt} = (2(\cos t)(\sin t) + 1)(-\sin t) + (\cos^2 t)(\cos t).
+\]
+\end{example}
+\begin{example}
+Given that,
+\begin{align*}
+F:\mathbb{R}&\to\mathbb{R}^3\\
+t&\mapsto
+\begin{pmatrix}t^2\\
+t^4\\
+-t^3
+\end{pmatrix}
+\end{align*}
+and,
+\begin{align*}
+G:\mathbb{R}^3&\to\mathbb{R}\\
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3
+\end{pmatrix}
+&\mapsto
+\sin(3x_1+2x_2+5x_3)
+\end{align*}
+Find $\left.\frac{d}{dt}(G\circ F)\right|_{t=1}$.
+\end{example}
+
+
+\begin{example}
+Given that,
+\begin{align*}
+F:\mathbb{R}^2&\to\mathbb{R}^3\\
+\begin{pmatrix}
+u\\
+v
+\end{pmatrix}&\mapsto
+\begin{pmatrix}
+u+v\\
+u^2\\
+v^3
+\end{pmatrix}
+\end{align*}
+and,
+\begin{align*}
+G:\mathbb{R}^3&\to\mathbb{R}\\
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}
+&\mapsto
+xy+z
+\end{align*}
+Find all the partial derivatives of $G\circ F$ at $(u,v)=(1,1)$.
+\end{example}
+
+\begin{example}
+Given that,
+\begin{align*}
+F:\mathbb{R}^2&\to\mathbb{R}^2\\
+\begin{pmatrix}
+u\\
+v
+\end{pmatrix}&\mapsto
+\begin{pmatrix}
+u^2+v\\
+uv
+\end{pmatrix}
+\end{align*}
+and,
+\begin{align*}
+G:\mathbb{R}^2&\to\mathbb{R}^2\\
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}
+&\mapsto
+\begin{pmatrix}
+x+y\\
+x-y
+\end{pmatrix}
+\end{align*}
+Find $\left. D(G\circ F)\right|_{\vec{x}=(1,1)^T}$. 
+Check the partial derivatives $\frac{\partial}{\partial u}$
+and $\frac{\partial}{\partial v}$ for the component
+functions are nothing but the entries of the $D(G\circ F)$.
+\end{example}

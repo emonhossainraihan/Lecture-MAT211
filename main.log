@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.27)  10 MAR 2026 02:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.27)  14 MAR 2026 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -623,42 +623,190 @@ LaTeX template Info: Declaring instance 'cmss' of type xfrac on line 392.
 
 LaTeX template Info: Declaring instance 'cmtt' of type xfrac on line 392.
 
+) (E:\INSTALLED_SOFTWARE\Latex\tex/latex/forest\forest.sty
+Package: forest 2017/07/14 v2.1.5 Drawing (linguistic) trees
+ (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/libraries/shapes\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/libraries/shapes\pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/libraries/shapes\pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.callouts.code.tex (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/libraries/shapes\pgflibraryshapes.callouts.code.tex)) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/libraries/shapes\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodepartlowerbox=\box71
+\pgfnodeparttwobox=\box72
+\pgfnodepartthreebox=\box73
+\pgfnodepartfourbox=\box74
+\pgfnodeparttwentybox=\box75
+\pgfnodepartnineteenbox=\box76
+\pgfnodeparteighteenbox=\box77
+\pgfnodepartseventeenbox=\box78
+\pgfnodepartsixteenbox=\box79
+\pgfnodepartfifteenbox=\box80
+\pgfnodepartfourteenbox=\box81
+\pgfnodepartthirteenbox=\box82
+\pgfnodeparttwelvebox=\box83
+\pgfnodepartelevenbox=\box84
+\pgfnodeparttenbox=\box85
+\pgfnodepartninebox=\box86
+\pgfnodeparteightbox=\box87
+\pgfnodepartsevenbox=\box88
+\pgfnodepartsixbox=\box89
+\pgfnodepartfivebox=\box90
+))) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/libraries\pgflibraryintersections.code.tex
+\pgf@intersect@solutions=\count347
+) (E:\INSTALLED_SOFTWARE\Latex\tex/latex/pgfopts\pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks51
+\pgfopts@list@add@b@toks=\toks52
+) (E:\INSTALLED_SOFTWARE\Latex\tex/latex/elocalloc\elocalloc.sty
+Package: elocalloc 2016/12/15 v0.03 local allocation for LaTeX 2015+ (DPC)
+) (E:\INSTALLED_SOFTWARE\Latex\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (E:\INSTALLED_SOFTWARE\Latex\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)) (E:\INSTALLED_SOFTWARE\Latex\tex/latex/inlinedef\inlinedef.sty
+Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
+\ID@toks=\toks53
+\ID@count=\count348
 )
-\c@definition=\count347
+\ID@usercommands=\toks54
+\safeloop@depth=\count349
+\safeRKloop@depth=\count350
+\forest@temp@dimen=\dimen309
+\forest@temp@count=\count351
+\forest@n=\count352
+\forest@temp@global@count=\count353
+\forest@temp@toks=\toks55
+\forest@temparray@M=\count354
+\forest@temparray@N=\count355
+\forest@global@temparray@M=\count356
+\forest@global@temparray@N=\count357
+\forest@isnum@count=\count358
+\forest@isdim@nonintpart=\count359
+\forest@isdim@dimen=\dimen310
+\forest@sort@m=\count360
+\forest@sort@k=\count361
+\forest@sort@p=\count362
+\bracket@content=\toks56
+\bracket@afterthought=\toks57
+\forest@node@maxid=\count363
+\forest@process@left@M=\count364
+\forest@process@left@N=\count365
+\forest@process@right@M=\count366
+\forest@process@right@N=\count367
+\forest@process@saved@M=\count368
+\forest@process@saved@N=\count369
+\forest@process@result@M=\count370
+\forest@process@result@N=\count371
+\forest@process@n=\count372
+\forest@nodewalk@branch@toks=\toks58
+\forest@nodewalk@shortsteps@resolution=\toks59
+\forest@do@dynamics=\toks60
+\forest@box=\box91
+\forest@xg=\dimen311
+\forest@yg=\dimen312
+\forest@xs=\dimen313
+\forest@ys=\dimen314
+\forest@pi@toks=\toks61
+\forest@segment@toks=\toks62
+\forest@PIi@toks=\toks63
+\forest@PIii@toks=\toks64
+\forest@copy@in=\read4
+\forest@copy@out=\write4
+\forest@externalize@max@outer@n=\count373
+\forest@externalize@inner@n=\count374
+) (E:\INSTALLED_SOFTWARE\Latex\tex/latex/tikz-qtree\tikz-qtree.sty (E:\INSTALLED_SOFTWARE\Latex\tex/latex/tikz-qtree\pgftree.sty (E:\INSTALLED_SOFTWARE\Latex\tex/latex/tikz-qtree\pgfsubpic.sty (E:\INSTALLED_SOFTWARE\Latex\tex/generic/tikz-qtree\pgfsubpic.tex
+\pgf@subpicminx=\dimen315
+\pgf@subpicminy=\dimen316
+\pgf@subpicmaxx=\dimen317
+\pgf@subpicmaxy=\dimen318
+)) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/tikz-qtree\pgftree.tex
+\levelsep=\dimen319
+\subtreesep=\dimen320
+\smuggle@levelsep=\dimen321
+\smuggle@subtreesep=\dimen322
+\this@levelsep=\dimen323
+\this@subtreesep=\dimen324
+\pgftree@childx=\dimen325
+\pgftree@savechildx=\dimen326
+\pgftree@childy=\dimen327
+\pgftree@savechildy=\dimen328
+\pgftree@childi=\count375
+\pgftree@savechildi=\count376
+\pgftree@level=\count377
+\pgftree@depth=\dimen329
+\pgf@subpic@hbox@children=\box92
+\pgf@subpic@minx@children=\dimen330
+\pgf@subpic@miny@children=\dimen331
+\pgf@subpic@maxx@children=\dimen332
+\pgf@subpic@maxy@children=\dimen333
+\pgftree@lastchildx=\dimen334
+\pgftree@lastchildy=\dimen335
+)) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/tikz-qtree\tikz-qtree.tex
+\@result=\toks65
+\child@list=\toks66
+\root@node=\toks67
+)) (E:\INSTALLED_SOFTWARE\Latex\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen336
+\pgfarrowlength=\dimen337
+\pgfarrowwidth=\dimen338
+\pgfarrowlinewidth=\dimen339
+)
+\c@definition=\count378
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
  (E:\INSTALLED_SOFTWARE\Latex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count348
-\scratchdimen=\dimen309
-\scratchbox=\box71
-\nofMPsegments=\count349
-\nofMParguments=\count350
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count351
-\MPscratchDim=\dimen310
-\MPnumerator=\count352
-\makeMPintoPDFobject=\count353
-\everyMPtoPDFconversion=\toks52
+\scratchcounter=\count379
+\scratchdimen=\dimen340
+\scratchbox=\box93
+\nofMPsegments=\count380
+\nofMParguments=\count381
+\everyMPshowfont=\toks68
+\MPscratchCnt=\count382
+\MPscratchDim=\dimen341
+\MPnumerator=\count383
+\makeMPintoPDFobject=\count384
+\everyMPtoPDFconversion=\toks69
 ) (E:\INSTALLED_SOFTWARE\Latex\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -701,25 +849,25 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 79.
+Package hyperref Info: Link coloring OFF on input line 85.
 (main.out) (main.out)
-\@outlinefile=\write4
-\openout4 = `main.out'.
+\@outlinefile=\write5
+\openout5 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 88.
  (E:\INSTALLED_SOFTWARE\Latex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
  (E:\INSTALLED_SOFTWARE\Latex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 82.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 88.
  (E:\INSTALLED_SOFTWARE\Latex\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (main.toc)
-\tf@toc=\write5
-\openout5 = `main.toc'.
+\tf@toc=\write6
+\openout6 = `main.toc'.
 
 
 
@@ -970,7 +1118,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[21]) (main.bbl)
+[21]
+Overfull \hbox (13.4688pt too wide) in paragraph at lines 4--7
+\OT1/cmtt/m/n/10.95 com / questions / 3266639 / notation-[]for-[]partial-[]derivative-[]of-[]functions-[]of-[]functions/$[]\OT1/cmr/m/n/10.95 . 
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -979,7 +1132,51 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[22] (main.aux)
+[22]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[23]
+Missing character: There is no ] in font nullfont!
+<images/rollar.png, id=256, 1318.9275pt x 385.44pt>
+File: images/rollar.png Graphic file (type png)
+<use images/rollar.png>
+Package pdftex.def Info: images/rollar.png  used on input line 219.
+(pdftex.def)             Requested size: 452.9679pt x 132.37115pt.
+Missing character: There is no ] in font nullfont!
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[24 <./images/rollar.png>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[25]) (main.bbl)
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[26] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
@@ -993,17 +1190,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2F28C10E776413581A9751D529949138;1440.
  ) 
 Here is how much of TeX's memory you used:
- 34846 strings out of 468080
- 796695 string characters out of 5433948
- 1388857 words of memory out of 5000000
- 62846 multiletter control sequences out of 15000+600000
+ 45626 strings out of 468080
+ 1103994 string characters out of 5433948
+ 1705425 words of memory out of 5000000
+ 73521 multiletter control sequences out of 15000+600000
  648517 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,105p,743b,2229s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 124i,17n,115p,1621b,2229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmr6.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmr8.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (22 pages, 455076 bytes).
+Output written on main.pdf (26 pages, 628324 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 107 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
