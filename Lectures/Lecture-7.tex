@@ -1,0 +1,168 @@
+\newpage
+\section{Lecture-07}
+From our first lecture, we have seen the general definition of 
+derivative of a function. 
+\begin{definition}
+    Let $U$ be an open set of $\mathbb R$ and $f: U \to \mathbb R$ then 
+    $f$ is differentiable at $a$ with the derivative $f'(a)$ if and only if
+    $$
+    \lim_{h \to 0} \frac{f(a+h) - f(a)-f'(a)h}{h}=0
+    $$
+\end{definition}
+\subsection{First order derivatives}
+In multivariable calculus, we understand a function by knowing
+a function by knowing how it varies with each variables,
+fixing all the others. We begin by considering a real-valued
+function $f$ of two variables $x$ and $y$. 
+\begin{definition}
+    We define the partial derivatives $\frac{\partial f}{\partial x}$ and $\frac{\partial f}{\partial y}$ as
+    $$
+    \frac{\partial f}{\partial x}\begin{pmatrix} a \\ b \end{pmatrix} = \lim_{h \to 0} \frac{f\begin{pmatrix} a+h \\ b \end{pmatrix} - f\begin{pmatrix} a \\ b \end{pmatrix}}{h}
+    $$
+    and
+    $$
+    \frac{\partial f}{\partial y}\begin{pmatrix} a \\ b \end{pmatrix} = \lim_{k \to 0} \frac{f\begin{pmatrix} a \\ b+k \end{pmatrix} - f\begin{pmatrix} a \\ b \end{pmatrix}}{k}
+    $$
+    respectively, provided these limits exist.
+\end{definition}
+For get a clear understanding have a look the figure 1.1 from \cite{shifrin}, chapter 3, section 1.
+\begin{example}
+    Given that $f(x,y) = x^2+2y$, find $\frac{\partial f}{\partial x}\begin{pmatrix} a \\ b \end{pmatrix}$ and $\frac{\partial f}{\partial y}\begin{pmatrix} a \\ b \end{pmatrix}$.\\
+    \textbf{Answer:} We have shown it in the classroom.
+\end{example}
+More generally, if \(U \subset \mathbb{R}^n\) is open and \(a \in U\), we define the \(j^{\text{th}}\) partial derivative of
+\[
+f : U \to \mathbb{R}^m
+\]
+at \(a\) to be
+\[
+\frac{\partial f}{\partial x_j}(a)
+=
+\lim_{t \to 0}
+\frac{f(a + t e_j) - f(a)}{t},
+\qquad
+j = 1, \ldots, n
+\]
+(provided this limit exists). Many authors use the alternative notation \(D_j f(a)\) to represent the \(j^{\text{th}}\) partial derivative of \(f\) at \(a\).\\
+The partial derivatives of \(f\) measure the rate of change of \(f\) in the directions of the
+coordinate axes, i.e., in the directions of the standard basis vectors \(e_1, \ldots, e_n\). Given any
+nonzero vector \(\mathbf{v}\), it is natural to consider the rate of change of \(f\) in the direction of \(\mathbf{v}\).
+\begin{definition}
+Let \(U \subset \mathbb{R}^n\) be open and \(a \in U\). We define the \emph{directional derivative} of
+\[
+f : U \to \mathbb{R}^m
+\]
+at \(a\) in the direction \(\mathbf{v}\) to be
+\[
+D_{\mathbf{v}}f(a)=\lim_{t\to 0}\frac{f(a+t\mathbf{v})-f(a)}{t},
+\]
+provided this limit exists.
+\end{definition}
+\begin{example}
+    Let
+\[
+f\!\left(\begin{array}{c}
+x\\
+y\\
+z
+\end{array}\right)=x^2y+e^{3x+y-z},
+\qquad
+\text{let } a=
+\left[\begin{array}{c}
+1\\
+-1\\
+2
+\end{array}\right]
+\quad \text{and} \quad
+\mathbf{v}=
+\left[\begin{array}{c}
+2\\
+3\\
+-1
+\end{array}\right].
+\]
+What is the directional derivative \(D_{\mathbf{v}}f(a)\)?\\
+\textbf{Approach-01:} We have shown it in the classroom using the definition.\\
+\textbf{Approach-02:}
+We define \(\varphi:\mathbb{R}\to\mathbb{R}\) by \(\varphi(t)=f(a+t\mathbf{v})\). Note that
+\[
+\varphi'(0)
+=
+\lim_{t\to 0}\frac{\varphi(t)-\varphi(0)}{t}
+=
+\lim_{t\to 0}\frac{f(a+t\mathbf{v})-f(a)}{t}
+=
+D_{\mathbf{v}}f(a).
+\]
+
+So we just calculate \(\varphi\) and compute its derivative at \(0\):
+\begin{align*}
+\varphi(t)
+&=
+f\!\left(\begin{array}{c}
+1+2t\\
+-1+3t\\
+2-t
+\end{array}\right)\\
+&=(1+2t)^2(-1+3t)+e^{3(1+2t)+(-1+3t)-(2-t)}\\
+&=(1+2t)^2(-1+3t)+e^{10t}
+\end{align*}
+Hence,
+\[
+\varphi'(t)
+=
+4(1+2t)(-1+3t)+3(1+2t)^2+10e^{10t},
+\]
+from which we conclude that
+\[
+D_{\mathbf{v}}f(a)=\varphi'(0)=9.
+\]
+
+This approach is usually more convenient than calculating the limit directly when we want skip the tedious limit definition.  
+\end{example}
+\subsection{Higher Order Partial Derivatives}
+Given a function \(f : U \to \mathbb{R}\) where \(U \subset \mathbb{R}^n\) is open, we can consider the partial derivatives of \(f\). If these partial derivatives are themselves differentiable, we can take their partial derivatives, which are called the second order partial derivatives of \(f\). We can continue this process to define higher order partial derivatives.\\
+For a function \(f : U \to \mathbb{R}\) where \(U\subset \mathbb{R}^n\) is open, we denote the second order partial derivatives of \(f\) by
+\[  
+\frac{\partial^2 f}{\partial x_i \partial x_j}
+=
+\frac{\partial}{\partial x_i}\left(\frac{\partial f}{\partial
+x_j}\right),
+\qquad
+i, j = 1, \ldots, n.
+\]
+The second order partial derivatives of \(f\) are often denoted by
+\[
+f_{x_i x_j}
+=
+\frac{\partial^2 f}{\partial x_i \partial x_j}.
+\]
+\begin{example}
+    Let \(f : \mathbb{R}^2 \to \mathbb{R}\) be defined by
+\[
+f(x,y) = x^2y + e^{3x+y}.
+\]
+Find the second order partial derivatives of \(f\).
+\end{example}
+\begin{example}
+    Let \(f : \mathbb{R}^2 \to \mathbb{R}\) be defined by
+\[
+f(x,y) = \begin{cases}
+\frac{xy(x^2-y^2)}{x^2+y^2}, & (x,y) \neq (0,0)\\
+0, & (x,y) = (0,0)
+\end{cases}.
+\]
+Calculate the mixed partial derivatives $f_{xy}=\frac{\partial^2 f}{\partial x \partial y}$ and $f_{yx}=\frac{\partial^2 f}{\partial y \partial x}$ at the origin.
+And show that $f_{xy}(0,0) \neq f_{yx}(0,0)$.\\
+\textbf{Answer:} We have shown it in the classroom.
+\end{example}
+The most surprising fact about second order partial derivatives is that, under mild conditions, the order of differentiation does not matter. In other words, if \(f : U \to \mathbb{R}\) is a function where \(U \subset \mathbb{R}^n\) is open, then
+\[
+\frac{\partial^2 f}{\partial x_i \partial x_j}
+=
+\frac{\partial^2 f}{\partial x_j \partial x_i},
+\qquad
+i, j = 1, \ldots, n,
+\]
+provided the second order partial derivatives are continuous at the point in question. This result is known as \emph{Clairaut's theorem} or \emph{Schwarz's theorem}.
+

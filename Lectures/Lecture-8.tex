@@ -1,6 +1,6 @@
 \newpage
 \section{Lecture-08}
-\subsection{Directional Derivative}
+\subsection{Directional Derivative (contd.)}
 \begin{problem}
   If $T(\vec x)$ is a linear transformation, then find the directional derivative of $T(\vec x)$ at $\vec x=\vec a$ in the direction $\vec{v}$.
 \end{problem}
@@ -53,153 +53,6 @@ D_{\vec u}f(0,0)=\frac{u_1^3}{u_1^2+u_2^2}=u_1^3\neq 0.
 \]
 But still $f$ is not differentiable at $(0,0)$, see \url{https://math.stackexchange.com/a/3057145/1167703}.\\~\\  
 \textbf{Question:} Does the existence of all directional derivatives at a point imply the existence of the total derivative at that point? The answer is no, as shown by the above example. The function $f$ has all directional derivatives at $(0,0)$, but it is not differentiable at $(0,0)$ because the limit in the definition of differentiability does not exist.
-
-
-\subsection{Tangent Space for $\mathbb R^2$ (Optional)}
-For a \emph{fixed} direction $v$, the directional derivative at $p$ defines a map
-\[
-D_v\big|_p: C^\infty(\mathbb{R}^2)\longrightarrow \mathbb{R},
-\qquad
-f\longmapsto D_v f(p),
-\]
-which is linear. Moreover, it satisfies the Leibniz rule
-\[
-D_v(fg)(p)=f(p)\,D_v g(p)+g(p)\,D_v f(p),
-\]
-so $D_v|_p$ is a \emph{derivation at $p$} (the ``tangent vector as operator'' viewpoint).
-
-\begin{definition}
-A derivation is a linear map
-\[
-X : C^\infty(\mathbb R^2) \to \mathbb{R}
-\]
-acting on smooth functions, satisfying the
-Leibniz rule:
-\[
-X(fg) = X(f)g + fX(g).
-\]
-It generalizes the concept of a tangent vector as an operator, mapping a
-function to its directional derivative at a specific point or over a region.
-\end{definition}
-
-\medskip
-The tangent space is \emph{not} built from one fixed operator $D_v|_p$; rather it is built from the collection of \emph{all} such derivations at $p$. A clean definition is
-\[
-T_p\mathbb{R}^2
-:=\Bigl\{\,X:C^\infty(\mathbb{R}^2)\to\mathbb{R}\ \Bigm|\ 
-X \text{ is linear and } X(fg)=f(p)X(g)+g(p)X(f)\Bigr\}.
-\]
-Elements of $T_p\mathbb{R}^2$ are operators that differentiate functions at $p$.
-Each direction $v=(v_1,v_2)\in\mathbb{R}^2$ produces an element
-\[
-v\longmapsto D_v\big|_p\in T_p\mathbb{R}^2.
-\]
-\medskip
-Define the standard derivations
-\[
-\left.\frac{\partial}{\partial x}\right|_p(f)=\frac{\partial f}{\partial x}(p),
-\qquad
-\left.\frac{\partial}{\partial y}\right|_p(f)=\frac{\partial f}{\partial y}(p).
-\]
-Then for $v=(v_1,v_2)$,
-\[
-D_v\big|_p
-=
-v_1\left.\frac{\partial}{\partial x}\right|_p
-+
-v_2\left.\frac{\partial}{\partial y}\right|_p,
-\]
-so $\Bigl\{\left.\frac{\partial}{\partial x}\right|_p,\left.\frac{\partial}{\partial y}\right|_p\Bigr\}$
-is a basis of $T_p\mathbb{R}^2$.
-\medskip
-A tangent vector at $p$ can be viewed as an operator that takes a smooth function $f$ 
-and returns its directional rate of change at $p$. The tangent space $T_p\mathbb{R}^2$ 
-is the vector space of all such derivative-operators (derivations), 
-and in coordinates it has basis 
-$\left.\frac{\partial}{\partial x}\right|_p,\left.\frac{\partial}{\partial y}\right|_p$. See \url{https://math.stackexchange.com/q/1118419/1167703} to get idea why are derivations useful for defining tangent vectors. 
-\begin{example}
-  Let $f(x,y)=3x-2y$ and $p=(1,1)$.
-For $v=(1,0)$ and $w=(0,1)$,
-\[
-D_v\big|_p(f)=\frac{\partial f}{\partial x}(p)=3,
-\qquad
-D_w\big|_p(f)=\frac{\partial f}{\partial y}(p)=-2.
-\]
-For $u=(2,5)$,
-\[
-D_u\big|_p(f)=2\cdot 3+5\cdot(-2)=6-10=-4.
-\]
-Equivalently,
-\[
-D_u\big|_p
-=
-2\left.\frac{\partial}{\partial x}\right|_p
-+
-5\left.\frac{\partial}{\partial y}\right|_p.
-\]
-\end{example}
-\begin{example}
-Let $f(x,y)=x^2+y^2$ and $p=(1,2)$. Then
-\[
-f_x=2x,\qquad f_y=2y
-\quad\Rightarrow\quad
-f_x(p)=2,\ \ f_y(p)=4.
-\]
-For $v=(3,-1)$,
-\[
-D_v\big|_p(f)=3\cdot 2+(-1)\cdot 4=6-4=2,
-\qquad\text{hence}\qquad
-D_{(3,-1)}\big|_p
-=
-3\left.\frac{\partial}{\partial x}\right|_p
--
-\left.\frac{\partial}{\partial y}\right|_p.
-\]
-\end{example}
-\begin{example}
-From the previous example, for $v=(1,0)$ and $w=(0,1)$,
-\[
-D_v\big|_p(f)=2,\qquad D_w\big|_p(f)=4.
-\]
-Since $v+w=(1,1)$,
-\[
-D_{v+w}\big|_p(f)=1\cdot 2+1\cdot 4=6,
-\qquad\text{and indeed}\qquad
-D_{v+w}\big|_p(f)=D_v\big|_p(f)+D_w\big|_p(f).
-\]
-\end{example}
-\begin{example}
-Let $f(x,y)=x$, $g(x,y)=y^2$, $p=(1,2)$, and $v=(3,-1)$.
-Then
-\[
-D_v\big|_p(f)=3,
-\qquad
-D_v\big|_p(g)=(-1)\cdot (2y)\big|_{(1,2)}=-4.
-\]
-For the product $fg=xy^2$, compute
-\[
-(xy^2)_x=y^2,\qquad (xy^2)_y=2xy,
-\]
-so at $(1,2)$ we have $D(fg)(1,2)=(4,4)$ and hence
-\[
-D_v\big|_p(fg)=(4,4)\cdot(3,-1)=12-4=8.
-\]
-On the other hand,
-\[
-f(p)\,D_v\big|_p(g)+g(p)\,D_v\big|_p(f)
-=(1)(-4)+(4)(3)=-4+12=8,
-\]
-\end{example}
-~\\
-Tangent spaces let us define:
-\begin{enumerate}
-  \item Derivatives
-  \item Gradients
-  \item Vector fields
-  \item Flows
-  \item Differential equations
-\end{enumerate}
-
 
 % =============================================================================
 
@@ -562,4 +415,150 @@ b & a\\
 \begin{remark}
   For more interesting example related with matrix algebra can be found in Hubbard \cite{hubbard} (Example 1.7.17 and proposition 1.7.18).
 \end{remark}
+
+\subsection{Tangent Space for $\mathbb R^2$ (Optional)}
+For a \emph{fixed} direction $v$, the directional derivative at $p$ defines a map
+\[
+D_v\big|_p: C^\infty(\mathbb{R}^2)\longrightarrow \mathbb{R},
+\qquad
+f\longmapsto D_v f(p),
+\]
+which is linear. Moreover, it satisfies the Leibniz rule
+\[
+D_v(fg)(p)=f(p)\,D_v g(p)+g(p)\,D_v f(p),
+\]
+so $D_v|_p$ is a \emph{derivation at $p$} (the ``tangent vector as operator'' viewpoint).
+
+\begin{definition}
+A derivation is a linear map
+\[
+X : C^\infty(\mathbb R^2) \to \mathbb{R}
+\]
+acting on smooth functions, satisfying the
+Leibniz rule:
+\[
+X(fg) = X(f)g + fX(g).
+\]
+It generalizes the concept of a tangent vector as an operator, mapping a
+function to its directional derivative at a specific point or over a region.
+\end{definition}
+
+\medskip
+The tangent space is \emph{not} built from one fixed operator $D_v|_p$; rather it is built from the collection of \emph{all} such derivations at $p$. A clean definition is
+\[
+T_p\mathbb{R}^2
+:=\Bigl\{\,X:C^\infty(\mathbb{R}^2)\to\mathbb{R}\ \Bigm|\ 
+X \text{ is linear and } X(fg)=f(p)X(g)+g(p)X(f)\Bigr\}.
+\]
+Elements of $T_p\mathbb{R}^2$ are operators that differentiate functions at $p$.
+Each direction $v=(v_1,v_2)\in\mathbb{R}^2$ produces an element
+\[
+v\longmapsto D_v\big|_p\in T_p\mathbb{R}^2.
+\]
+\medskip
+Define the standard derivations
+\[
+\left.\frac{\partial}{\partial x}\right|_p(f)=\frac{\partial f}{\partial x}(p),
+\qquad
+\left.\frac{\partial}{\partial y}\right|_p(f)=\frac{\partial f}{\partial y}(p).
+\]
+Then for $v=(v_1,v_2)$,
+\[
+D_v\big|_p
+=
+v_1\left.\frac{\partial}{\partial x}\right|_p
++
+v_2\left.\frac{\partial}{\partial y}\right|_p,
+\]
+so $\Bigl\{\left.\frac{\partial}{\partial x}\right|_p,\left.\frac{\partial}{\partial y}\right|_p\Bigr\}$
+is a basis of $T_p\mathbb{R}^2$.
+\medskip
+A tangent vector at $p$ can be viewed as an operator that takes a smooth function $f$ 
+and returns its directional rate of change at $p$. The tangent space $T_p\mathbb{R}^2$ 
+is the vector space of all such derivative-operators (derivations), 
+and in coordinates it has basis 
+$\left.\frac{\partial}{\partial x}\right|_p,\left.\frac{\partial}{\partial y}\right|_p$. See \url{https://math.stackexchange.com/q/1118419/1167703} to get idea why are derivations useful for defining tangent vectors. 
+\begin{example}
+  Let $f(x,y)=3x-2y$ and $p=(1,1)$.
+For $v=(1,0)$ and $w=(0,1)$,
+\[
+D_v\big|_p(f)=\frac{\partial f}{\partial x}(p)=3,
+\qquad
+D_w\big|_p(f)=\frac{\partial f}{\partial y}(p)=-2.
+\]
+For $u=(2,5)$,
+\[
+D_u\big|_p(f)=2\cdot 3+5\cdot(-2)=6-10=-4.
+\]
+Equivalently,
+\[
+D_u\big|_p
+=
+2\left.\frac{\partial}{\partial x}\right|_p
++
+5\left.\frac{\partial}{\partial y}\right|_p.
+\]
+\end{example}
+\begin{example}
+Let $f(x,y)=x^2+y^2$ and $p=(1,2)$. Then
+\[
+f_x=2x,\qquad f_y=2y
+\quad\Rightarrow\quad
+f_x(p)=2,\ \ f_y(p)=4.
+\]
+For $v=(3,-1)$,
+\[
+D_v\big|_p(f)=3\cdot 2+(-1)\cdot 4=6-4=2,
+\qquad\text{hence}\qquad
+D_{(3,-1)}\big|_p
+=
+3\left.\frac{\partial}{\partial x}\right|_p
+-
+\left.\frac{\partial}{\partial y}\right|_p.
+\]
+\end{example}
+\begin{example}
+From the previous example, for $v=(1,0)$ and $w=(0,1)$,
+\[
+D_v\big|_p(f)=2,\qquad D_w\big|_p(f)=4.
+\]
+Since $v+w=(1,1)$,
+\[
+D_{v+w}\big|_p(f)=1\cdot 2+1\cdot 4=6,
+\qquad\text{and indeed}\qquad
+D_{v+w}\big|_p(f)=D_v\big|_p(f)+D_w\big|_p(f).
+\]
+\end{example}
+\begin{example}
+Let $f(x,y)=x$, $g(x,y)=y^2$, $p=(1,2)$, and $v=(3,-1)$.
+Then
+\[
+D_v\big|_p(f)=3,
+\qquad
+D_v\big|_p(g)=(-1)\cdot (2y)\big|_{(1,2)}=-4.
+\]
+For the product $fg=xy^2$, compute
+\[
+(xy^2)_x=y^2,\qquad (xy^2)_y=2xy,
+\]
+so at $(1,2)$ we have $D(fg)(1,2)=(4,4)$ and hence
+\[
+D_v\big|_p(fg)=(4,4)\cdot(3,-1)=12-4=8.
+\]
+On the other hand,
+\[
+f(p)\,D_v\big|_p(g)+g(p)\,D_v\big|_p(f)
+=(1)(-4)+(4)(3)=-4+12=8,
+\]
+\end{example}
+~\\
+Tangent spaces let us define:
+\begin{enumerate}
+  \item Derivatives
+  \item Gradients
+  \item Vector fields
+  \item Flows
+  \item Differential equations
+\end{enumerate}
+
 

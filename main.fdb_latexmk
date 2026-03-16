@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1773431934.99304 "main.aux" "main.bbl" "main" 1773474473.63669 0
+["bibtex main"] 1773660606.42548 "main.aux" "main.bbl" "main" 1773660608.94705 0
   "./bib.bib" 1773085744 566 f4b00d66c427c76a2cf10f395512b574 ""
   "E:/INSTALLED_SOFTWARE/Latex/bibtex/bst/bibtex/alpha.bst" 1291864736 23907 a5f93555796fb564b924339521f10a7c ""
-  "main.aux" 1773474473 1966 64982b3a697088f319bce395533b3533 "pdflatex"
+  "main.aux" 1773660608 2980 170162957c60521100ee97f4b6ae2dd3 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1773474471.45087 "e:/Lecture-MAT211/main.tex" "main.pdf" "main" 1773474473.63708 0
+["pdflatex"] 1773660606.72359 "e:/Lecture-MAT211/main.tex" "main.pdf" "main" 1773660608.94743 0
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773085324 83788 3e06ff692e1323f668f12ea28ca579e9 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1744346720 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1771071748 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -53,6 +53,7 @@
   "E:/INSTALLED_SOFTWARE/Latex/fonts/tfm/public/cm/cmtt10.tfm" 1136765053 768 1321e9409b4137d6fb428ac9dc956269 ""
   "E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1247596666 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1247596667 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
@@ -275,19 +276,21 @@
   "E:/INSTALLED_SOFTWARE/Latex/tex/latex/xfrac/xfrac.sty" 1718270407 14945 a207ee7fd6b8cf6d82afb367c583ddd3 ""
   "Lectures/Lecture-1.tex" 1772991967 3635 ddc674ed225eb09c07f47811e1bfd241 ""
   "Lectures/Lecture-10.tex" 1773474470 9009 167c708d3ef7bb32bebf394639d5a26d ""
-  "Lectures/Lecture-2.tex" 1772991967 5052 e50872c514a80a253ff862c0372c3280 ""
-  "Lectures/Lecture-3.tex" 1772991967 5664 fe59425f26b8a7ee6ee359e7d045c6b2 ""
-  "Lectures/Lecture-8.tex" 1773087515 16002 149fb7aac712cf28b49d1f29847ac5eb ""
+  "Lectures/Lecture-2.tex" 1773660478 5104 08463926cce0c37939e9990f5eff037e ""
+  "Lectures/Lecture-3.tex" 1773660499 5704 b68d669b7881bcaa31799c00de715eec ""
+  "Lectures/Lecture-6.tex" 1773660536 1331 502dd6b4fbc13a237423d7e3ce0e0b9b ""
+  "Lectures/Lecture-7.tex" 1773660213 6037 81d918ee0eef85eac07cb8794ef7c08d ""
+  "Lectures/Lecture-8.tex" 1773660603 16009 e5b909ae2a65b2588e357922f059d4a3 ""
   "Lectures/Lecture-9.tex" 1773085784 14758 f05eee8f69fbc278946ed2051d732bb2 ""
   "Lectures/images/bounded-1.png" 1772991967 93690 490d19133480cbc0202bb17bb7465fed ""
   "Lectures/images/open-set.jpg" 1772991967 55486 300badaaae95bbd614e1e04f23483eb3 ""
-  "e:/Lecture-MAT211/main.tex" 1773427473 2464 5f43cad21d5c0dfc2ccd2e198f499953 ""
+  "e:/Lecture-MAT211/main.tex" 1773657840 2528 e23b7251eb2f6dd023a5a2fc9b3f4cf0 ""
   "images/rollar.png" 1773033555 163417 3b7220a568eea10e005f6d3a5c3ea10e ""
-  "main.aux" 1773474473 1966 64982b3a697088f319bce395533b3533 "pdflatex"
-  "main.bbl" 1773431935 477 b3a72128d7525b07af3b0579362f4ef8 "bibtex main"
-  "main.out" 1773474473 1440 2f28c10e776413581a9751d529949138 "pdflatex"
-  "main.tex" 1773427473 2464 5f43cad21d5c0dfc2ccd2e198f499953 ""
-  "main.toc" 1773474473 922 fad3318b855d76c6d0259788aa5f91bf "pdflatex"
+  "main.aux" 1773660608 2980 170162957c60521100ee97f4b6ae2dd3 "pdflatex"
+  "main.bbl" 1773660606 477 b3a72128d7525b07af3b0579362f4ef8 "bibtex main"
+  "main.out" 1773660608 2688 a7d3fd6f6d4f2b35d847994d9bc77ebe "pdflatex"
+  "main.tex" 1773657840 2528 e23b7251eb2f6dd023a5a2fc9b3f4cf0 ""
+  "main.toc" 1773660608 1589 4400b2666a8c010a6df7ed4b2bb78745 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
