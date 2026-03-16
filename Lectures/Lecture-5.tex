@@ -1,0 +1,134 @@
+\newpage
+\section{Lecture-05}
+\subsection{Limits of Functions}
+\begin{definition}
+Let $U \subset \mathbb{R}^n$ be an open subset containing a neighborhood of
+$a \in \mathbb{R}^n$, except perhaps for the point $a$ itself.
+Suppose $f:U \to \mathbb{R}^m$. We say that
+\[
+    \lim_{x\to a} f(x)=\ell
+\]
+($f(x)$ approaches $\ell \in \mathbb{R}^m$ as $x$ approaches $a$) if for every
+$\varepsilon>0$ there is $\delta>0$ so that
+\[
+    \|f(x)-\ell\|<\varepsilon
+    \qquad\text{whenever}\qquad
+    0<\|x-a\|<\delta.
+\]
+\end{definition}
+\subsection{Relation between the limit of functions and its components}
+\begin{proposition}
+$$\lim_{x\to a} f(x)=\ell$$ if and only if
+$$\lim_{x\to a} f_j(x)=\ell_j$$ for all $j=1,\ldots,m$.
+\end{proposition}    
+\begin{proof}
+    See proposition 3.1, Chapter 2 from \cite{shifrin}.
+\end{proof}
+\begin{example}
+Fix a non-zero vector $b\in\mathbb R^n$. Let $f:\mathbb R^n\rightarrow\mathbb R$ be defined by $f(x)=b\cdot x$. Show that $$\lim_{x\to a} f(x)=b\cdot a$$\\
+\textbf{Answer: }Fix a nonzero vector $b \in \mathbb{R}^n$. Let $f : \mathbb{R}^n \to \mathbb{R}$ be defined by
+\[
+f(x)= b \cdot x.
+\]
+We claim that
+\[
+\lim_{x \to a} f(x) = b \cdot a
+\]
+because
+\[
+|f(x)-b\cdot a|
+= |b\cdot x - b\cdot a|
+= |b\cdot (x-a)|
+\leq \|b\|\,\|x-a\|,
+\]
+by the Cauchy-Schwarz Inequality. Thus, given
+$\varepsilon > 0$, if we take
+\[
+\delta = \frac{\varepsilon}{\|b\|},
+\]
+then whenever $0 < \|x-a\| < \delta$, we have
+\[
+|f(x)-b\cdot a| < \|b\| \frac{\varepsilon}{\|b\|} = \varepsilon,
+\]
+as needed.
+
+\end{example}
+
+\begin{example}
+Let $f:\mathbb R^n\rightarrow\mathbb R$ be defined by $f(x)=\|x\|^2$. Show that $$\lim_{x\to a} f(x)=\|a\|^2$$\\
+\textbf{Answer: }We have
+\[
+f(x)=\|x\|^2=x\cdot x,
+\]
+so
+\[
+f(x)-\|a\|^2=\|x\|^2-\|a\|^2=x\cdot x-a\cdot a.
+\]
+Now
+\[
+x\cdot x-a\cdot a=(x-a)\cdot(x+a),
+\]
+and therefore
+\[
+|f(x)-\|a\|^2|
+= |(x-a)\cdot(x+a)|
+\le \|x-a\|\,\|x+a\|
+\]
+by the Cauchy--Schwarz inequality.
+
+If $\|x-a\|<1$, then
+\[
+\|x\|\le \|x-a\|+\|a\|<1+\|a\|,
+\]
+so
+\[
+\|x+a\|\le \|x\|+\|a\|<1+2\|a\|.
+\]
+Hence, whenever $\|x-a\|<1$,
+\[
+|f(x)-\|a\|^2|
+\le (1+2\|a\|)\|x-a\|.
+\]
+
+Given $\varepsilon>0$, choose
+\[
+\delta=\min\left\{1,\frac{\varepsilon}{1+2\|a\|}\right\}.
+\]
+Then if $0<\|x-a\|<\delta$, we have
+\[
+|f(x)-\|a\|^2|
+\le (1+2\|a\|)\|x-a\|
+< (1+2\|a\|)\delta
+\le \varepsilon.
+\]
+Thus,
+\[
+\lim_{x\to a} f(x)=\|a\|^2.
+\]
+\end{example}
+
+\begin{example}
+Let $f:\mathbb R^2\setminus\{0\}\rightarrow\mathbb R$ be defined by $f\left(\begin{bmatrix}
+x\\y
+\end{bmatrix}\right)=\frac{x^2y}{x^2+y^2}$. Does $\lim_{x\to 0} f(x)$ exist?
+\end{example}
+
+\begin{example}
+Let $f:\mathbb R^2\setminus\{0\}\rightarrow\mathbb R$ be defined by $f\left(\begin{bmatrix}
+    x\\y
+\end{bmatrix}\right)=\frac{x^2}{x^2+y^2}$. Does $\lim_{x\to 0} f(x)$ exist?
+\end{example} 
+
+\begin{example}
+Let $f:\mathbb R^2\setminus\{0\}\rightarrow\mathbb R$ be defined by $f\left(\begin{bmatrix}
+    x\\y
+\end{bmatrix}\right)=\frac{xy}{x^2+y^2}$. Does $\lim_{x\to 0} f(x)$ exist?
+\end{example} 
+These examples are taken from the textbook \cite{shifrin}, Examples 3,4 from Chapter 2, section 3.
+\begin{proposition}
+Suppose $U\subset\mathbb R^n$ is open and $f:U\rightarrow\mathbb R^m$. Then $f$ is continuous at $a\in U$ if and only if for every sequence $\{x_k\}$ of points in $U$ converging to $a$, the sequence $\{f(x_k)\}$ converges to $f(a)$.
+\end{proposition}
+\begin{proof}
+    I have uploaded the recorded video of the proof of this proposition on YouTube (\url{https://www.youtube.com/watch?v=wCV83GlEAGwURL}) which contain the detailed proof of this proposition.
+
+\end{proof}  

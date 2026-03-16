@@ -438,10 +438,10 @@ INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 OUTPUT main.toc
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmcsc10.tfm
 INPUT .\Lectures\Lecture-1.tex
 INPUT .\Lectures\Lecture-1.tex
 INPUT Lectures\Lecture-1.tex
-INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmcsc10.tfm
 INPUT .\Lectures\Lecture-2.tex
 INPUT .\Lectures\Lecture-2.tex
 INPUT Lectures\Lecture-2.tex
@@ -497,6 +497,13 @@ INPUT .\Lectures\images\bounded-1.png
 INPUT .\Lectures\images\bounded-1.png
 INPUT .\Lectures\images\bounded-1.png
 INPUT .\Lectures\images\bounded-1.png
+INPUT .\Lectures\Lecture-4.tex
+INPUT .\Lectures\Lecture-4.tex
+INPUT Lectures\Lecture-4.tex
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmtt10.tfm
+INPUT .\Lectures\Lecture-5.tex
+INPUT .\Lectures\Lecture-5.tex
+INPUT Lectures\Lecture-5.tex
 INPUT .\Lectures\Lecture-6.tex
 INPUT .\Lectures\Lecture-6.tex
 INPUT Lectures\Lecture-6.tex
@@ -506,7 +513,6 @@ INPUT Lectures\Lecture-7.tex
 INPUT .\Lectures\Lecture-8.tex
 INPUT .\Lectures\Lecture-8.tex
 INPUT Lectures\Lecture-8.tex
-INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\tfm\public\cm\cmtt10.tfm
 INPUT .\Lectures\Lecture-9.tex
 INPUT .\Lectures\Lecture-9.tex
 INPUT Lectures\Lecture-9.tex
@@ -540,6 +546,8 @@ INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT E:\INSTALLED_SOFTWARE\Latex\fonts\type1\public\amsfonts\cm\cmmi8.pfb
