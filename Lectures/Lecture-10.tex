@@ -349,3 +349,55 @@ Check the partial derivatives $\frac{\partial}{\partial u}$
 and $\frac{\partial}{\partial v}$ for the component
 functions are nothing but the entries of the $D(G\circ F)$.
 \end{example}
+
+\begin{example}
+Suppose the temperature in space is given by
+\[
+f\!\begin{pmatrix}x\\y\\z\end{pmatrix}
+= xyz^{2}+e^{\,3xy-z^{2}}
+\]
+and the position of a bumblebee is given as a function of time by
+\[
+g:\mathbb{R}\to\mathbb{R}^{3}.
+\]
+If at time \(t=0\) the bumblebee is at
+\[
+a=\begin{pmatrix}1\\2\\3\end{pmatrix}
+\]
+and her velocity vector is
+\[
+\mathbf{v}=\begin{pmatrix}-1\\1\\2\end{pmatrix},
+\]
+then we might ask at what rate she
+perceives the temperature to be changing at that instant. The temperature she
+measures at time \(t\) is \(f(g(t))\), and so she wants to calculate
+\[
+(f\circ g)'(0)=Df(g(0))\,g'(0).
+\]
+We have
+\[
+Df\!\begin{pmatrix}x\\y\\z\end{pmatrix}
+=
+\begin{bmatrix}
+yz^{2}+3ye^{\,3xy-z^{2}}
+&
+xz^{2}+3xe^{\,3xy-z^{2}}
+&
+2xyz-2ze^{\,3xy-z^{2}}
+\end{bmatrix},
+\]
+so
+\[
+Df(a)=\begin{bmatrix}24&12&10\end{bmatrix}.
+\]
+Then
+\[
+(f\circ g)'(0)=Df(g(0))\,g'(0)=Df(a)\mathbf{v}
+=
+\begin{bmatrix}24&12&10\end{bmatrix}
+\begin{pmatrix}-1\\1\\2\end{pmatrix}
+=8.
+\]
+Note that in order to apply the chain rule, we need to know only her position
+and velocity vector at that instant, not even what her path near \(a\) might be.
+\end{example}

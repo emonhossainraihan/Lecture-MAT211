@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.27)  17 MAR 2026 02:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.27)  17 MAR 2026 16:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1316,7 +1316,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[41]) (main.bbl)
+[41]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1325,7 +1325,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[42] (main.aux)
+[42]) (main.bbl)
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[43] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
@@ -1336,20 +1345,20 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.90001pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 809D8203F523928AB8812DB6B34FBCE1;4222.
+(rerunfilecheck)             Checksum: D5A60754133982676AA72C55A1720BB9;4341.
  ) 
 Here is how much of TeX's memory you used:
- 45841 strings out of 468080
- 1108785 string characters out of 5433948
- 2899539 words of memory out of 5000000
+ 45843 strings out of 468080
+ 1108807 string characters out of 5433948
+ 2899540 words of memory out of 5000000
  73661 multiletter control sequences out of 15000+600000
  648517 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  124i,17n,115p,1621b,2491s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmbx8.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmr6.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmr8.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><E:/INSTALLED_SOFTWARE/Latex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (42 pages, 735893 bytes).
+Output written on main.pdf (43 pages, 738798 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 170 named destinations out of 1000 (max. 500000)
+ 583 PDF objects out of 1000 (max. 8388607)
+ 172 named destinations out of 1000 (max. 500000)
  258 words of extra memory for PDF output out of 10000 (max. 10000000)
 
