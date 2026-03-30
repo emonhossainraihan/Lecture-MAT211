@@ -1,0 +1,363 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\title{Practice Sheet 03}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problem 1}
+Let \( f(x,y)=x^2y+e^{3x+y} \). Find all second‑order partial derivatives.
+
+\begin{proof}[Solution]
+	First order partial derivatives:
+	\[
+		\frac{\partial f}{\partial x}=2xy+3e^{3x+y},\qquad
+		\frac{\partial f}{\partial y}=x^2+e^{3x+y}.
+	\]
+	Second order:
+	\[
+		\frac{\partial^2 f}{\partial x^2}=2y+9e^{3x+y},\qquad
+		\frac{\partial^2 f}{\partial y^2}=e^{3x+y},
+	\]
+	\[
+		\frac{\partial^2 f}{\partial x\partial y}=2x+3e^{3x+y},\qquad
+		\frac{\partial^2 f}{\partial y\partial x}=2x+3e^{3x+y}.
+	\]
+	The mixed partials are equal.
+\end{proof}
+
+\section*{Problem 2}
+\[
+	f(x,y)=\begin{cases}
+		\dfrac{xy(x^2-y^2)}{x^2+y^2}, & (x,y)\neq(0,0), \\[4pt]
+		0,                            & (x,y)=(0,0).
+	\end{cases}
+\]
+Compute \( f_{xy}(0,0) \) and \( f_{yx}(0,0) \) and show they differ.
+
+\begin{proof}[Solution]
+	First compute the first partials at the origin by definition:
+	\[
+		f_x(0,0)=\lim_{h\to0}\frac{f(h,0)-0}{h}=0,\qquad
+		f_y(0,0)=\lim_{k\to0}\frac{f(0,k)-0}{k}=0.
+	\]
+	For \((x,y)\neq(0,0)\) we simplify \(f(x,y)=\dfrac{x^3y-xy^3}{x^2+y^2}\). Differentiate:
+	\[
+		f_x = \frac{(3x^2y-y^3)(x^2+y^2)-(x^3y-xy^3)(2x)}{(x^2+y^2)^2}.
+	\]
+	To find \(f_{xy}(0,0)\), evaluate \(f_x(0,y)\) for \(y\neq0\):
+	\[
+		f_x(0,y)=\frac{(0-y^3)(y^2)-0}{(y^2)^2}=\frac{-y^5}{y^4}=-y.
+	\]
+	Hence
+	\[
+		f_{xy}(0,0)=\lim_{k\to0}\frac{f_x(0,k)-f_x(0,0)}{k}=\lim_{k\to0}\frac{-k-0}{k}=-1.
+	\]
+	Now compute \(f_y\):
+	\[
+		f_y = \frac{(x^3-3xy^2)(x^2+y^2)-(x^3y-xy^3)(2y)}{(x^2+y^2)^2}.
+	\]
+	Set \(y=0\):
+	\[
+		f_y(x,0)=\frac{(x^3)(x^2)-0}{(x^2)^2}=\frac{x^5}{x^4}=x.
+	\]
+	Thus
+	\[
+		f_{yx}(0,0)=\lim_{h\to0}\frac{f_y(h,0)-f_y(0,0)}{h}=\lim_{h\to0}\frac{h-0}{h}=1.
+	\]
+	Therefore \(f_{xy}(0,0)=-1\neq1=f_{yx}(0,0)\).
+\end{proof}
+
+\section*{Problem 3}
+If \(T(x)\) is a linear transformation, find the directional derivative of \(T(x)\) at \(x=a\) in the direction \(v\).
+
+\begin{proof}[Solution]
+	For a linear transformation \(T\), we have \(T(a+tv)=T(a)+tT(v)\). Then
+	\[
+		D_vT(a)=\lim_{t\to0}\frac{T(a+tv)-T(a)}{t}=\lim_{t\to0}\frac{tT(v)}{t}=T(v).
+	\]
+	Thus the directional derivative is simply \(T(v)\).
+\end{proof}
+
+\section*{Problem 4}
+If \(f(x)=\|x\|^2\) for \(x\in\mathbb{R}^n\), find the directional derivative of \(f\) at \(a\) in the direction \(v\).
+
+\begin{proof}[Solution]
+	We compute directly:
+	\[
+		f(a+tv)=\|a+tv\|^2=(a+tv)\cdot(a+tv)=\|a\|^2+2t\,a\cdot v+t^2\|v\|^2.
+	\]
+	Hence
+	\[
+		D_vf(a)=\lim_{t\to0}\frac{f(a+tv)-f(a)}{t}=\lim_{t\to0}\frac{2t\,a\cdot v+t^2\|v\|^2}{t}=2a\cdot v.
+	\]
+	So \(D_vf(a)=2a\cdot v\).
+\end{proof}
+
+\section*{Problem 5}
+\[
+	f(x,y)=\begin{cases}
+		\dfrac{x^3}{x^2+y^2}, & (x,y)\neq(0,0), \\[4pt]
+		0,                    & (x,y)=(0,0).
+	\end{cases}
+\]
+Find the partial derivatives and all directional derivatives of \(f\) at \((0,0)\).
+
+\begin{proof}[Solution]
+	Partial derivatives at the origin:
+	\[
+		f_x(0,0)=\lim_{h\to0}\frac{f(h,0)-0}{h}=\lim_{h\to0}\frac{h^3/h^2}{h}=\lim_{h\to0}\frac{h}{h}=1,
+	\]
+	\[
+		f_y(0,0)=\lim_{k\to0}\frac{f(0,k)-0}{k}=0.
+	\]
+	For a direction \(v=(v_1,v_2)\neq(0,0)\),
+	\[
+		D_vf(0,0)=\lim_{t\to0}\frac{f(tv_1,tv_2)-0}{t}
+		=\lim_{t\to0}\frac{(tv_1)^3}{(tv_1)^2+(tv_2)^2}\cdot\frac1t
+		=\lim_{t\to0}\frac{t^3v_1^3}{t^2(v_1^2+v_2^2)}\cdot\frac1t
+		=\frac{v_1^3}{v_1^2+v_2^2}.
+	\]
+	Thus every directional derivative exists and equals \(\dfrac{v_1^3}{v_1^2+v_2^2}\). This is not linear in \(v\), so \(f\) is not differentiable at the origin.
+\end{proof}
+
+\section*{Problem 6}
+For \( f(x,y)=x^2-y^2 \), find the derivative of \( f \) at the point \(\begin{pmatrix}2\\3\end{pmatrix}\) and hence determine \( Df\!\begin{pmatrix}2\\3\end{pmatrix} \).
+
+\begin{proof}[Solution]
+	The derivative of \( f \) is
+	\[
+		\nabla f = \left( \frac{\partial f}{\partial x},\; \frac{\partial f}{\partial y} \right) = (2x,\,-2y).
+	\]
+	At \(\begin{pmatrix}2\\3\end{pmatrix}\),
+	\[
+		\nabla f(2,3) = (2\cdot2,\,-2\cdot3) = (4,\,-6).
+	\]
+	Therefore the derivative as a linear map is
+	\[
+		Df\!\begin{pmatrix}2\\3\end{pmatrix} = \begin{bmatrix} 4 & -6 \end{bmatrix},
+	\]
+	which acts on a vector \((h,k)\) by \(4h - 6k\).
+\end{proof}
+\section*{Problem 7}
+For \(f:\mathbb{R}^2\to\mathbb{R}^2\) given by \(f(x,y)=\begin{pmatrix} xy \\ y^2 \end{pmatrix}\), find \(Df\!\begin{pmatrix}a\\b\end{pmatrix}\).
+
+\begin{proof}[Solution]
+	The Jacobian matrix is
+	\[
+		Df(x,y)=\begin{pmatrix}
+			\frac{\partial}{\partial x}(xy)  & \frac{\partial}{\partial y}(xy)  \\[4pt]
+			\frac{\partial}{\partial x}(y^2) & \frac{\partial}{\partial y}(y^2)
+		\end{pmatrix}
+		=\begin{pmatrix}
+			y & x  \\
+			0 & 2y
+		\end{pmatrix}.
+	\]
+	Hence
+	\[
+		Df\!\begin{pmatrix}a\\b\end{pmatrix}=\begin{pmatrix}
+			b & a  \\
+			0 & 2b
+		\end{pmatrix}.
+	\]
+\end{proof}
+
+\section*{Problem 8}
+Let \(f(x,y)=\begin{pmatrix} xy \\ x^2-y^2 \end{pmatrix}\). At the point \(\mathbf{a}=(1,1)\), at what rate is \(f\) varying in the direction \(\mathbf{v}=(1,0)\)?
+
+\begin{proof}[Solution]
+	The rate of change (directional derivative) of a vector‑valued function is given by \(Df(\mathbf{a})\,\mathbf{v}\). Compute the Jacobian:
+	\[
+		Df(x,y)=\begin{pmatrix}
+			y  & x   \\
+			2x & -2y
+		\end{pmatrix},\quad\text{so}\quad Df(1,1)=\begin{pmatrix}
+			1 & 1  \\
+			2 & -2
+		\end{pmatrix}.
+	\]
+	Then
+	\[
+		Df(1,1)\,\mathbf{v}=\begin{pmatrix}
+			1 & 1  \\
+			2 & -2
+		\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix}=\begin{pmatrix}1\\2\end{pmatrix}.
+	\]
+	Thus the vector of directional derivatives of the component functions is \((1,2)\); i.e., the first component increases at rate 1, the second at rate 2.
+\end{proof}
+
+\section*{Problem 9}
+The position of a roller coaster is \((x(t),y(t))=(\cos t,\sin t)\) and its height is \(z=x^2y+x+1\). Find its rate of change in height with respect to time at time \(t\).
+
+\begin{proof}[Solution]
+	By the chain rule,
+	\[
+		\frac{dz}{dt}=\frac{\partial z}{\partial x}\frac{dx}{dt}+\frac{\partial z}{\partial y}\frac{dy}{dt}.
+	\]
+	We have
+	\[
+		\frac{\partial z}{\partial x}=2xy+1,\qquad \frac{\partial z}{\partial y}=x^2,
+	\]
+	\[
+		\frac{dx}{dt}=-\sin t,\qquad \frac{dy}{dt}=\cos t.
+	\]
+	Substituting \(x=\cos t,\;y=\sin t\):
+	\[
+		\frac{dz}{dt}=(2\cos t\sin t+1)(-\sin t)+\cos^2 t\cdot\cos t
+		=-2\cos t\sin^2 t-\sin t+\cos^3 t.
+	\]
+\end{proof}
+
+\section*{Problem 10}
+Given
+\[
+	F(t)=\begin{pmatrix} t^2 \\ t^4 \\ -t^3 \end{pmatrix},\qquad
+	G\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=\sin(3x_1+2x_2+5x_3),
+\]
+find \(\displaystyle\frac{d}{dt}(G\circ F)\Big|_{t=1}\).
+
+\begin{proof}[Solution]
+	By the chain rule,
+	\[
+		\frac{d}{dt}(G\circ F)(t)=\nabla G(F(t))\cdot F'(t).
+	\]
+	Compute:
+	\[
+		\nabla G=\bigl(3\cos(3x_1+2x_2+5x_3),\;2\cos(3x_1+2x_2+5x_3),\;5\cos(3x_1+2x_2+5x_3)\bigr).
+	\]
+	At \(t=1\), \(F(1)=(1,1,-1)\). Then \(3x_1+2x_2+5x_3=3(1)+2(1)+5(-1)=0\), so \(\cos0=1\). Hence
+	\[
+		\nabla G(F(1))=(3,2,5).
+	\]
+	Now \(F'(t)=(2t,\,4t^3,\,-3t^2)\), so \(F'(1)=(2,4,-3)\).
+	Thus
+	\[
+		\frac{d}{dt}(G\circ F)\big|_{t=1}=(3,2,5)\cdot(2,4,-3)=6+8-15=-1.
+	\]
+\end{proof}
+
+\section*{Problem 11}
+Let
+\[
+	F\begin{pmatrix}u\\v\end{pmatrix}=\begin{pmatrix}u+v\\u^2\\v^3\end{pmatrix},\qquad
+	G\begin{pmatrix}x\\y\\z\end{pmatrix}=xy+z.
+\]
+Find all partial derivatives of \(G\circ F\) at \((u,v)=(1,1)\).
+
+\begin{proof}[Solution]
+	First compute \(H(u,v)=(G\circ F)(u,v)=G(F(u,v))\):
+	\[
+		H(u,v)=(u+v)(u^2)+v^3=u^3+u^2v+v^3.
+	\]
+	Then
+	\[
+		\frac{\partial H}{\partial u}=3u^2+2uv,\qquad
+		\frac{\partial H}{\partial v}=u^2+3v^2.
+	\]
+	At \((u,v)=(1,1)\):
+	\[
+		H_u(1,1)=3(1)^2+2(1)(1)=3+2=5,\qquad
+		H_v(1,1)=1^2+3(1)^2=1+3=4.
+	\]
+	Thus the partial derivatives are \(5\) and \(4\).
+\end{proof}
+
+\section*{Problem 12}
+Let
+\[
+	F\begin{pmatrix}u\\v\end{pmatrix}=\begin{pmatrix}u^2+v\\uv\end{pmatrix},\qquad
+	G\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}x+y\\x-y\end{pmatrix},\qquad
+	x=(1,1)^T.
+\]
+Find \(D(G\circ F)\big|_{x=(1,1)^T}\) and verify that the partial derivatives with respect to \(u\) and \(v\) of the component functions agree with the entries of this matrix.
+
+\begin{proof}[Solution]
+	First compute the composition \(H=G\circ F\):
+	\[
+		H(u,v)=G(F(u,v))=G(u^2+v,\;uv)=\begin{pmatrix}(u^2+v)+uv \\ (u^2+v)-uv\end{pmatrix}
+		=\begin{pmatrix}u^2+v+uv \\ u^2+v-uv\end{pmatrix}.
+	\]
+	The Jacobian matrix of \(H\) is
+	\[
+		DH(u,v)=\begin{pmatrix}
+			\frac{\partial}{\partial u}(u^2+v+uv) & \frac{\partial}{\partial v}(u^2+v+uv) \\[4pt]
+			\frac{\partial}{\partial u}(u^2+v-uv) & \frac{\partial}{\partial v}(u^2+v-uv)
+		\end{pmatrix}
+		=\begin{pmatrix}
+			2u+v & 1+u \\
+			2u-v & 1-u
+		\end{pmatrix}.
+	\]
+	At \((u,v)=(1,1)\):
+	\[
+		DH(1,1)=\begin{pmatrix}
+			2(1)+1 & 1+1 \\
+			2(1)-1 & 1-1
+		\end{pmatrix}
+		=\begin{pmatrix}
+			3 & 2 \\
+			1 & 0
+		\end{pmatrix}.
+	\]
+	Now verify using the chain rule: \(D(G\circ F)(u,v)=DG(F(u,v))\,DF(u,v)\). Compute
+	\[
+		DG(x,y)=\begin{pmatrix}
+			1 & 1  \\
+			1 & -1
+		\end{pmatrix},\qquad
+		DF(u,v)=\begin{pmatrix}
+			2u & 1 \\
+			v  & u
+		\end{pmatrix}.
+	\]
+	At \((u,v)=(1,1)\), \(F(1,1)=(2,1)\). Then
+	\[
+		DG(2,1)=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+		DF(1,1)=\begin{pmatrix}2&1\\1&1\end{pmatrix}.
+	\]
+	Multiplying:
+	\[
+		DG(2,1)\,DF(1,1)=\begin{pmatrix}1&1\\1&-1\end{pmatrix}\begin{pmatrix}2&1\\1&1\end{pmatrix}
+		=\begin{pmatrix}2+1&1+1\\2-1&1-1\end{pmatrix}
+		=\begin{pmatrix}3&2\\1&0\end{pmatrix},
+	\]
+	which matches \(DH(1,1)\). Hence the partial derivatives agree.
+\end{proof}
+
+\section*{Problem 13}
+The temperature is \(f(x,y,z)=xy^2+e^{3xy-z^2}\). A bumblebee moves along a path \(g(t)\) with \(g(0)=(1,2,3)\) and velocity \(\mathbf{v}=(-1,1,2)\). Find the rate at which the temperature changes at \(t=0\).
+
+\begin{proof}[Solution]
+	The rate of change of temperature is the directional derivative in the direction of the velocity:
+	\[
+		\frac{d}{dt}f(g(t))\big|_{t=0}=\nabla f(g(0))\cdot \mathbf{v}.
+	\]
+	Compute the gradient:
+	\[
+		\nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)
+		=\bigl(y^2+3ye^{3xy-z^2},\;2xy+3xe^{3xy-z^2},\;-2ze^{3xy-z^2}\bigr).
+	\]
+	At \((1,2,3)\):
+	\[
+		3xy-z^2=3\cdot1\cdot2-9=6-9=-3,\quad e^{-3}=e^{-3}.
+	\]
+	Thus
+	\[
+		\nabla f(1,2,3)=\bigl(2^2+3\cdot2e^{-3},\;2\cdot1\cdot2+3\cdot1e^{-3},\;-2\cdot3e^{-3}\bigr)
+		=\bigl(4+6e^{-3},\;4+3e^{-3},\;-6e^{-3}\bigr).
+	\]
+	Now dot with \(\mathbf{v}=(-1,1,2)\):
+	\[
+		\frac{d}{dt}f\big|_{t=0}=(4+6e^{-3})(-1)+(4+3e^{-3})(1)+(-6e^{-3})(2)
+		= -4-6e^{-3}+4+3e^{-3}-12e^{-3}= -15e^{-3}.
+	\]
+	Thus the temperature changes at rate \(-15e^{-3}\).
+\end{proof}
+
+\end{document}

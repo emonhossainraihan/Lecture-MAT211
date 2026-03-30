@@ -2,42 +2,131 @@
 \section{Lecture-06}
 \subsection{Limits of Functions (Contd.)}
 \begin{definition}
-For a function $f:\mathbb R^n\rightarrow \mathbb R^m$, we write $$\lim_{\vec x\rightarrow \vec a}f(\vec x)=L$$ 
-if for every $\epsilon>0$, there exists $\delta>0$ such that for all $\vec x\in\mathbb R^n$, except possibly $\vec x=\vec a$,
-$$\|\vec x-\vec a\|<\delta \implies \|f(\vec x)-L\|<\epsilon.$$
+	For a function $f:\mathbb R^n\rightarrow \mathbb R^m$, we write $$\lim_{\vec x\rightarrow \vec a}f(\vec x)=L$$
+	if for every $\epsilon>0$, there exists $\delta>0$ such that for all $\vec x\in\mathbb R^n$, except possibly $\vec x=\vec a$,
+	$$\|\vec x-\vec a\|<\delta \implies \|f(\vec x)-L\|<\epsilon.$$
 \end{definition}
 \begin{example}
-    Consider,
-    $$
-    \lim_{(x,y)\rightarrow (0,0)}\frac{3x^2y}{x^2+y^2}=0
-    $$
-    \textbf{Answer:} We have shown it in the classroom.
-  \end{example}
- \begin{example}
-    Consider,
-    $$
-    \lim_{(x,y)\rightarrow (0,0)}\frac{5x^2y^2}{x^2+y^2}=0
-    $$
-    \textbf{Answer:} We have shown it in the classroom.
-  \end{example}
-   \begin{example}
-    Consider,
-    $$
-    \lim_{(x,y)\rightarrow (2,2)}\frac{x^3-y^3}{x^2-y^2}=3
-    $$
-    \textbf{Answer:} We have shown it in the classroom.
-  \end{example}
-     \begin{example}
-    Consider,
-    $$
-    \lim_{(x,y)\rightarrow (0,0)}\frac{\sin(x^2+y^2)}{x^2+y^2}=1
-    $$
-    \textbf{Answer:} We have shown it in the classroom.
-  \end{example}
+	Consider,
+	$$
+		\lim_{(x,y)\rightarrow (0,0)}\frac{3x^2y}{x^2+y^2}=0
+	$$
+\end{example}
+
+\begin{proof}
+	Let \(\varepsilon > 0\) be given. Choose \(\delta = \varepsilon/3\). For any \((x,y) \neq (0,0)\) with \(\sqrt{x^2+y^2} < \delta\), we have
+	\[
+		\left| \frac{3x^2 y}{x^2+y^2} \right| \le \frac{3x^2 |y|}{x^2+y^2} \le 3|y| \le 3\sqrt{x^2+y^2} < 3\delta = \varepsilon.
+	\]
+	Therefore, \(\displaystyle \lim_{(x,y)\to(0,0)} \frac{3x^2 y}{x^2+y^2} = 0\).
+\end{proof}
 \begin{example}
-    Consider,
-    $$
-    \lim_{(x,y)\rightarrow (1,1)}\frac{2(x-y^2)}{x^2-y^4}=1
-    $$
-    \textbf{Answer:} We have shown it in the classroom.
-  \end{example}
+	Consider,
+	$$
+		\lim_{(x,y)\rightarrow (0,0)}\frac{5x^2y^2}{x^2+y^2}=0
+	$$
+\end{example}
+\begin{proof}
+	Let \(\varepsilon > 0\) be given. Choose \(\delta = \sqrt{\varepsilon/5}\). For any \((x,y) \neq (0,0)\) with \(\sqrt{x^2+y^2} < \delta\), we have
+	\[
+		\left| \frac{5x^2 y^2}{x^2+y^2} \right| = 5\cdot\frac{x^2}{x^2+y^2}\cdot y^2 \le 5\cdot 1\cdot y^2 \le 5(x^2+y^2) < 5\delta^2 = \varepsilon.
+	\]
+	Therefore, \(\displaystyle \lim_{(x,y)\to(0,0)} \frac{5x^2 y^2}{x^2+y^2} = 0\).
+\end{proof}
+\begin{example}
+	Consider,
+	$$
+		\lim_{(x,y)\rightarrow (2,2)}\frac{x^3-y^3}{x^2-y^2}=3
+	$$
+\end{example}
+\begin{proof}
+	Let \(\varepsilon > 0\) be given. Choose \(\delta = \min\left\{1, \dfrac{\varepsilon}{6}\right\}\).
+	For any \((x,y) \neq (2,2)\) with \(\sqrt{(x-2)^2+(y-2)^2} < \delta\) and \(x \neq y\) (so that the expression is defined), write \(u = x-2\) and \(v = y-2\). Then \(|u|,|v| < \delta\).
+
+	Since \(\delta \le 1\), we have \(|u+v| \le |u|+|v| < 2\delta \le 2\), hence
+	\[
+		|x+y| = |4+u+v| \ge 4 - |u+v| > 4 - 2 = 2.
+	\]
+
+	For \(x \neq y\), the function simplifies:
+	\[
+		\frac{x^3-y^3}{x^2-y^2} = \frac{x^2+xy+y^2}{x+y}.
+	\]
+
+	Now compute the difference:
+	\[
+		\left|\frac{x^2+xy+y^2}{x+y} - 3\right|
+		= \frac{\bigl|(x^2+xy+y^2) - 3(x+y)\bigr|}{|x+y|}.
+	\]
+
+	Substituting \(x=2+u,\; y=2+v\) gives
+	\[
+		x^2+xy+y^2 - 3x - 3y = 3(u+v) + (u^2+v^2+uv).
+	\]
+	Therefore,
+	\[
+		\left|\frac{x^2+xy+y^2}{x+y} - 3\right|
+		\le \frac{3|u+v| + |u|^2+|v|^2+|u||v|}{|x+y|}
+		< \frac{3\cdot 2\delta + \delta^2+\delta^2+\delta^2}{2}
+		= \frac{6\delta + 3\delta^2}{2}
+		= 3\delta + \frac{3}{2}\delta^2.
+	\]
+
+	Since \(\delta \le 1\), we have \(\frac{3}{2}\delta^2 \le \frac{3}{2}\delta\). Hence
+	\[
+		\left|\frac{x^2+xy+y^2}{x+y} - 3\right| < 3\delta + \frac{3}{2}\delta \le \frac{9}{2}\delta.
+	\]
+
+	Because \(\delta \le \varepsilon/6\), it follows that \(\frac{9}{2}\delta \le \frac{9}{2}\cdot\frac{\varepsilon}{6} = \frac{3}{4}\varepsilon < \varepsilon\).
+
+	Thus, for all \((x,y)\) with \(0<\sqrt{(x-2)^2+(y-2)^2}<\delta\) and \(x\neq y\),
+	\[
+		\left|\frac{x^3-y^3}{x^2-y^2} - 3\right| < \varepsilon.
+	\]
+	Hence \(\displaystyle \lim_{(x,y)\to(2,2)}\frac{x^3-y^3}{x^2-y^2}=3\).
+\end{proof}
+\begin{example}
+	Consider,
+	$$
+		\lim_{(x,y)\rightarrow (0,0)}\frac{\sin(x^2+y^2)}{x^2+y^2}=1
+	$$
+\end{example}
+
+\begin{proof}
+	Let \(\varepsilon > 0\) be given. Since \(\displaystyle \lim_{t \to 0} \frac{\sin t}{t} = 1\), there exists \(\delta_0 > 0\) such that for all \(t\) with \(0 < |t| < \delta_0\), we have \(\left| \frac{\sin t}{t} - 1 \right| < \varepsilon\). Choose \(\delta = \sqrt{\delta_0}\). For any \((x,y) \neq (0,0)\) with \(\sqrt{x^2+y^2} < \delta\), set \(t = x^2+y^2 > 0\). Then \(0 < t < \delta^2 = \delta_0\), so \(\left| \frac{\sin t}{t} - 1 \right| < \varepsilon\). Hence \(\left| \frac{\sin(x^2+y^2)}{x^2+y^2} - 1 \right| < \varepsilon\). Therefore \(\displaystyle \lim_{(x,y)\to(0,0)} \frac{\sin(x^2+y^2)}{x^2+y^2} = 1\).
+\end{proof}
+\begin{example}
+	Consider,
+	$$
+		\lim_{(x,y)\rightarrow (1,1)}\frac{2(x-y^2)}{x^2-y^4}=1
+	$$
+\end{example}
+
+\begin{proof}
+	Let \(\varepsilon > 0\) be given. Choose \(\delta = \min\left\{\dfrac14,\;\dfrac{\varepsilon}{4}\right\}\).
+	Suppose \((x,y)\) satisfies \(0 < \sqrt{(x-1)^2+(y-1)^2} < \delta\) and \(x \neq y^2\) (so that the expression is defined). Then \(|x-1| < \delta\) and \(|y-1| < \delta\).
+
+	We estimate
+	\[
+		|x+y^2-2| = |(x-1)+(y^2-1)|
+		\le |x-1| + |y-1||y+1|
+		< \delta + \delta\bigl(|y-1|+2\bigr)
+		< \delta + \delta(\delta+2) = \delta(\delta+3).
+	\]
+	Since \(\delta \le \frac14\), we have \(\delta+3 \le \frac14+3 = \frac{13}{4} < 4\), thus \(|x+y^2-2| < 4\delta\).
+	Moreover, \(x+y^2 \ge 2 - |x+y^2-2| > 2 - 4\delta \ge 2 - 4\cdot\frac14 = 1\), so \(x+y^2 > 1\).
+
+	For \(x \neq y^2\) we can simplify the original fraction:
+	\[
+		\frac{2(x-y^2)}{x^2-y^4} = \frac{2(x-y^2)}{(x-y^2)(x+y^2)} = \frac{2}{x+y^2}.
+	\]
+	Hence
+	\[
+		\left|\frac{2(x-y^2)}{x^2-y^4} - 1\right|
+		= \left|\frac{2}{x+y^2} - 1\right|
+		= \frac{|2 - (x+y^2)|}{x+y^2}
+		< \frac{4\delta}{1} = 4\delta \le \varepsilon.
+	\]
+
+	Therefore, \(\displaystyle \lim_{(x,y)\to(1,1)}\frac{2(x-y^2)}{x^2-y^4}=1\).
+\end{proof}

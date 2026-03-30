@@ -1,0 +1,190 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\title{Practice Sheet 02}
+\author{}
+\date{}
+\maketitle
+
+\section*{1. Limit proofs by $\varepsilon$–$\delta$}
+
+\subsection*{(a) $\displaystyle \lim_{(x,y)\to(1,2)}(5x^3 - x^2y^2)$}
+\begin{proof}
+	The function is a polynomial, hence continuous. Substituting gives $5\cdot1^3-1^2\cdot2^2=5-4=1$.
+	Let $\varepsilon>0$. Choose $\delta = \min\{1,\varepsilon/30\}$. For $\|(x,y)-(1,2)\|<\delta$ we have $|x-1|<\delta$ and $|y-2|<\delta$. Using $|x^3-1|\le7|x-1|$ and $|x^2y^2-4|\le 20\|(x,y)-(1,2)\|$ for $\delta\le1$, one obtains
+	\[
+		|5x^3-x^2y^2-1|\le 30\|(x,y)-(1,2)\|<\varepsilon.
+	\]
+	Thus the limit is $1$.
+\end{proof}
+
+\subsection*{(b) $\displaystyle \lim_{(x,y)\to(0,0)}\frac{xy}{\sqrt{x^2+y^2}}$}
+\begin{proof}
+	We claim the limit is $0$. For any $(x,y)\neq(0,0)$,
+	\[
+		\left|\frac{xy}{\sqrt{x^2+y^2}}\right|\le \frac{|x||y|}{\sqrt{x^2+y^2}}\le \frac{(\sqrt{x^2+y^2})^2}{\sqrt{x^2+y^2}}=\sqrt{x^2+y^2}.
+	\]
+	Given $\varepsilon>0$, take $\delta=\varepsilon$. Then $\sqrt{x^2+y^2}<\delta$ implies the expression is $<\varepsilon$. Hence the limit is $0$.
+\end{proof}
+
+\subsection*{(c) $\displaystyle \lim_{(x,y)\to(2,1)}\frac{4-xy}{x^2+3y^2}$}
+\begin{proof}
+	The function is continuous at $(2,1)$ because denominator $x^2+3y^2>0$. Direct substitution gives $\frac{4-2\cdot1}{4+3}= \frac{2}{7}$.
+	For an $\varepsilon$–$\delta$ proof, choose $\delta=\min\{1,\frac{49\varepsilon}{40}\}$. For $\|(x,y)-(2,1)\|<\delta$ we have $|x-2|,|y-1|<\delta$ and $x^2+3y^2\ge 4$. Then
+	\[
+		\left|\frac{4-xy}{x^2+3y^2}-\frac{2}{7}\right|
+		= \frac{|7(4-xy)-2(x^2+3y^2)|}{7(x^2+3y^2)}
+		\le \frac{\text{linear in }\delta}{28}<\varepsilon.
+	\]
+	Thus the limit is $2/7$.
+\end{proof}
+
+\subsection*{(d) $\displaystyle \lim_{(x,y)\to(0,0)}\frac{x^2+y^2}{\sqrt{x^2+y^2+1}}$}
+\begin{proof}
+	Let $r=\sqrt{x^2+y^2}$. The function becomes $\frac{r^2}{\sqrt{r^2+1}}$. As $r\to0$, this tends to $0$.
+	Given $\varepsilon>0$, choose $\delta=\varepsilon$. Then $r<\delta$ implies
+	\[
+		\left|\frac{x^2+y^2}{\sqrt{x^2+y^2+1}}\right|\le r^2 < \delta^2 \le \varepsilon\quad\text{if }\delta\le\sqrt{\varepsilon}.
+	\]
+	A simpler choice: $\delta=\min\{1,\varepsilon\}$ works because $r^2\le r<\varepsilon$. Hence the limit is $0$.
+\end{proof}
+
+\subsection*{(e) $\displaystyle \lim_{(x,y)\to(0,0)}\frac{3x^2y}{x^2+y^2}$}
+\begin{proof}
+	For $(x,y)\neq(0,0)$,
+	\[
+		\left|\frac{3x^2y}{x^2+y^2}\right|\le 3|y|\le 3\sqrt{x^2+y^2}.
+	\]
+	Given $\varepsilon>0$, take $\delta=\varepsilon/3$. Then $\sqrt{x^2+y^2}<\delta$ gives the expression $<3\delta=\varepsilon$. Thus the limit is $0$.
+\end{proof}
+
+\subsection*{(f) $\displaystyle \lim_{(x,y)\to(2,2)}\frac{x^3-y^3}{x^2-y^2}$}
+\begin{proof}
+	For $x\neq y$,
+	\[
+		\frac{x^3-y^3}{x^2-y^2}= \frac{(x-y)(x^2+xy+y^2)}{(x-y)(x+y)} = \frac{x^2+xy+y^2}{x+y}.
+	\]
+	The function is continuous at $(2,2)$ (since denominator $x+y\neq0$). Substituting gives $\frac{4+4+4}{4}=3$.
+	For an $\varepsilon$–$\delta$ proof, choose $\delta=\min\{1,\varepsilon/9\}$. Using the bounds $|x-2|,|y-2|<\delta$ one can show
+	\[
+		\left|\frac{x^2+xy+y^2}{x+y}-3\right| \le 9\delta <\varepsilon.
+	\]
+	Hence the limit is $3$.
+\end{proof}
+
+\subsection*{(g) $\displaystyle \lim_{(x,y)\to(1,1)}\frac{2(x-y^2)}{x^2-y^4}$}
+\begin{proof}
+	For $x\neq y^2$, factor:
+	\[
+		\frac{2(x-y^2)}{x^2-y^4}= \frac{2(x-y^2)}{(x-y^2)(x+y^2)} = \frac{2}{x+y^2}.
+	\]
+	The function $\frac{2}{x+y^2}$ is continuous at $(1,1)$ because $x+y^2=2\neq0$. Substituting gives $\frac{2}{1+1}=1$.
+	For the $\varepsilon$–$\delta$ argument, choose $\delta=\min\{1/4,\varepsilon/4\}$. Then for $\|(x,y)-(1,1)\|<\delta$ we have $|x-1|,|y-1|<\delta$, so
+	\[
+		|x+y^2-2|\le |x-1|+|y-1||y+1|<\delta+\delta\cdot3 =4\delta,
+	\]
+	and $x+y^2>1$. Hence
+	\[
+		\left|\frac{2}{x+y^2}-1\right| = \frac{|2-(x+y^2)|}{x+y^2} < \frac{4\delta}{1}=4\delta\le\varepsilon.
+	\]
+	Thus the limit is $1$.
+\end{proof}
+
+\section*{2. $\displaystyle \lim_{(x,y)\to(0,0)}\frac{5xy^2}{x^2+y^2}=0$}
+\begin{proof}
+	For $(x,y)\neq(0,0)$,
+	\[
+		\left|\frac{5xy^2}{x^2+y^2}\right| \le 5|y|\cdot\frac{|x|}{x^2+y^2}\cdot|y|.
+	\]
+	Better: $\left|\frac{5xy^2}{x^2+y^2}\right| \le 5|y|$ because $|x|\le \sqrt{x^2+y^2}$ and $\frac{|x|}{\sqrt{x^2+y^2}}\le1$. Actually,
+	\[
+		\frac{|x|y^2}{x^2+y^2} \le |y|.
+	\]
+	Thus $\left|\frac{5xy^2}{x^2+y^2}\right| \le 5|y| \le 5\sqrt{x^2+y^2}$.
+	Given $\varepsilon>0$, choose $\delta=\varepsilon/5$. Then $\sqrt{x^2+y^2}<\delta$ implies the expression $<5\delta=\varepsilon$. Hence the limit is $0$.
+\end{proof}
+
+\section*{3. $\displaystyle f(x,y)=\frac{xy^2}{x^2+y^4}$}
+\begin{proof}
+	We investigate the limit as $(x,y)\to(0,0)$. Along the line $x=0$ we get $f(0,y)=0\to0$. Along the parabola $x=y^2$ we get
+	\[
+		f(y^2,y)=\frac{y^2\cdot y^2}{(y^2)^2+y^4}=\frac{y^4}{y^4+y^4}=\frac12.
+	\]
+	Since we obtain different limits along different paths ($0$ and $1/2$), the limit does not exist. Therefore $\displaystyle\lim_{(x,y)\to(0,0)}f(x,y)$ does not exist.
+\end{proof}
+
+\section*{4. Continuity of $f(x,y)=\begin{cases} \frac{\cos y\,\sin x}{x}, & x\neq0 \\ \cos y, & x=0 \end{cases}$ at $(0,0)$}
+\begin{proof}
+	For $x\neq0$, $f(x,y)=\cos y\cdot\frac{\sin x}{x}$. As $x\to0$, $\frac{\sin x}{x}\to1$. Hence for any fixed $y$, $\lim_{x\to0}f(x,y)=\cos y$. For $(x,y)\to(0,0)$, we examine
+	\[
+		|f(x,y)-f(0,0)| = \left|\cos y\cdot\frac{\sin x}{x}-\cos0\right| = \left|\cos y\cdot\frac{\sin x}{x}-1\right|.
+	\]
+	Write
+	\[
+		\cos y\cdot\frac{\sin x}{x}-1 = \cos y\left(\frac{\sin x}{x}-1\right) + (\cos y-1).
+	\]
+	Given $\varepsilon>0$, choose $\delta>0$ such that $|x|<\delta$ implies $|\frac{\sin x}{x}-1|<\varepsilon/2$ (possible by the single-variable limit), and also such that $|y|<\delta$ implies $|\cos y-1|<\varepsilon/2$ (by continuity of cosine). Then for $\|(x,y)\|<\delta$,
+	\[
+		|f(x,y)-1|\le |\cos y|\cdot\left|\frac{\sin x}{x}-1\right| + |\cos y-1| < 1\cdot\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+	\]
+	Thus $\lim_{(x,y)\to(0,0)}f(x,y)=1$. But $f(0,0)=\cos0=1$, so $f$ is continuous at $(0,0)$. No redefinition is needed.
+\end{proof}
+
+\section*{Additional Problems (Continuity \& Sequences)}
+
+\subsection*{1. $f(x,y)=\begin{cases}\frac{xy}{x^2+y^2},&(x,y)\neq(0,0)\\0,&(x,y)=(0,0)\end{cases}$ is not continuous at $(0,0)$}
+\begin{proof}
+	Consider the sequence $(x_k,y_k)=(\frac1k,\frac1k)$. Then $f(x_k,y_k)=\frac{1/k^2}{2/k^2}=\frac12\to\frac12\neq0=f(0,0)$. Hence $f$ is not continuous at $(0,0)$.
+\end{proof}
+
+\subsection*{2. $f(x,y)=\begin{cases}\frac{xy^2}{x^2+y^4},&(x,y)\neq(0,0)\\0,&(x,y)=(0,0)\end{cases}$}
+\begin{proof}
+	Take any fixed line through $(0,0)$: either $x=0$ or $y=mx$ (or $x=my$).
+	- If $x=0$, then $f(0,y)=0\to0$.
+	- If $y=mx$, then $f(x,mx)=\frac{x\cdot m^2x^2}{x^2+m^4x^4}=\frac{m^2x^3}{x^2+m^4x^4}=\frac{m^2x}{1+m^4x^2}\to0$ as $x\to0$.
+	Thus along any line through the origin, the limit is $0$. However, the function is not continuous because along the parabola $x=y^2$ we get $f(y^2,y)=\frac{y^2\cdot y^2}{y^4+y^4}=\frac12\neq0$. Hence $f$ is not continuous at $(0,0)$.
+\end{proof}
+
+\subsection*{3. $g(x,y)=\begin{cases}x\sin\frac1y,&y\neq0\\0,&y=0\end{cases}$}
+\begin{proof}
+	We examine continuity at an arbitrary point $(x_0,y_0)$.
+	- If $y_0\neq0$, then near $(x_0,y_0)$ the function is a product of continuous functions (since $y\mapsto1/y$ is continuous away from $0$), so $g$ is continuous at $(x_0,y_0)$.
+	- If $y_0=0$, then $g(x,0)=0$. For continuity at $(x_0,0)$, we need $\lim_{(x,y)\to(x_0,0)}g(x,y)=0$.
+	For any $(x,y)$ with $y\neq0$, $|g(x,y)|=|x\sin\frac1y|\le |x|$. As $(x,y)\to(x_0,0)$, we can make $|x|$ arbitrarily close to $|x_0|$, but not necessarily small. However, we can estimate:
+	$|g(x,y)-0| = |x\sin\frac1y| \le |x|$. Given $\varepsilon>0$, choose $\delta=\varepsilon$. Then $\|(x,y)-(x_0,0)\|<\delta$ implies $|x-x_0|<\delta$ and $|y|<\delta$. But $|x|$ could be as large as $|x_0|+\delta$, which is not necessarily small. This naive bound fails when $x_0\neq0$.
+	Actually, the function is **not** continuous at points $(x_0,0)$ with $x_0\neq0$. Consider a sequence $(x_n,y_n)=(x_0,\frac1n)$. Then $g(x_n,y_n)=x_0\sin n$, which does not converge (oscillates). Hence $g$ is not continuous at such points.
+	At $(0,0)$ we have $g(0,0)=0$ and $|g(x,y)|\le|x|\le\sqrt{x^2+y^2}$, so $g$ is continuous at $(0,0)$.
+	Thus $g$ is continuous at all points with $y\neq0$, and at $(0,0)$, but not at points $(x_0,0)$ with $x_0\neq0$.
+\end{proof}
+
+\section*{Theorem on Iterated Limits}
+\begin{proof}[Proof of the theorem]
+	Suppose $\lim_{(x,y)\to(a,b)}f(x,y)=L$ and the one‑dimensional limits $\lim_{x\to a}f(x,y)=:\phi(y)$ and $\lim_{y\to b}f(x,y)=:\psi(x)$ exist for each $y$ (resp. $x$) in a neighbourhood.
+	We show $\lim_{y\to b}\phi(y)=L$. Given $\varepsilon>0$, choose $\delta>0$ such that $0<\|(x,y)-(a,b)\|<\delta$ implies $|f(x,y)-L|<\varepsilon/2$.
+	For a fixed $y$ with $0<|y-b|<\delta$, take $x\to a$ in the inequality $|f(x,y)-L|<\varepsilon/2$ (valid for all $x$ with $0<|x-a|<\sqrt{\delta^2-|y-b|^2}$). By the definition of $\phi(y)=\lim_{x\to a}f(x,y)$, we obtain $|\phi(y)-L|\le\varepsilon/2<\varepsilon$. Thus $\lim_{y\to b}\phi(y)=L$. The other equality follows similarly.
+\end{proof}
+
+\subsection*{(b) Example with different iterated limits}
+\[
+	f(x,y)=\begin{cases}
+		1,  & x\neq0,\;y=0,     \\
+		-1, & x=0,\;y\neq0,     \\
+		0,  & \text{otherwise}.
+	\end{cases}
+\]
+Then $\lim_{x\to0}\bigl(\lim_{y\to0}f(x,y)\bigr)=1$ but $\lim_{y\to0}\bigl(\lim_{x\to0}f(x,y)\bigr)=-1$.
+
+\subsection*{(c) Example where iterated limits are $0$ but double limit does not exist}
+\[
+	f(x,y)=\begin{cases}
+		1, & y=x^2,\;x\neq0,   \\
+		0, & \text{otherwise}.
+	\end{cases}
+\]
+For each fixed $x\neq0$, $\lim_{y\to0}f(x,y)=0$; for each fixed $y$, $\lim_{x\to0}f(x,y)=0$. Hence both iterated limits are $0$. But along the parabola $y=x^2$, $f(x,x^2)=1$, so the double limit does not exist.
+
+\end{document}
