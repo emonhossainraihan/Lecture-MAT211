@@ -1,4 +1,10 @@
 dumpping/
+main.aux
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.toc
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
