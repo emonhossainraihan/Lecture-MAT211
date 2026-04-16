@@ -1,0 +1,160 @@
+\newpage
+\section{Lecture-12}
+\subsection{Implicit Function Theorem}
+Let's look $x^2+y^2=1$ closely. Is this a graph of a function? It's not.
+No, it's not. It's a relation between $x$ and $y$. But we want to study function so far. 
+At a neighborhood of $(x,y)$ except $(0,1)$ and $(0,-1)$, we can solve for $y$ as a function of $x$. 
+$y=\sqrt{1-x^2}$ or $y=-\sqrt{1-x^2}$ are explicit functions that give the same relation between $x$ and $y$
+as $x^2+y^2=1$. This is true locally near any point except $(0,1)$ and $(0,-1)$.
+
+The implicit function theorem provides conditions under which a relationship of the from $F(x,y)=0$ can be rewritten as
+a function $y=f(x)$ locally. 
+\begin{example}
+    Consider $y^5+y^3+y+x=0$. It is trivial to write $x=f(y)$, but can we write $y=f(x)$?
+    But there is no explicit formula for $y$ in terms of $x$, because there is no formula for the roots of a general quintic polynomial.
+    In general, there is no formula for finding roots of polynomials of degree 5 or higher (Abel, Galois). 
+    Fix $x_0$, define $\varphi(y)=y^5+y^3+y+x_0$. Then,
+\[
+\varphi'(y)=5y^4+3y^2+1>0,\qquad\forall y\in\R.
+\] 
+Which implies $\varphi$ is strictly increasing. In Calculus-I, we know that any odd degree polynomial has at least one real root.
+But since $\varphi$ is strictly increasing, it has exactly one real root. So we can write $y=f(x)$ locally near any point $(x_0,y_0)$, give me 
+$x_0$, we can find a unique $y_0$ such that $y_0^5+y_0^3+y_0+x_0=0$. We found a function $y=f(x)$, but $f$ is implicit.       
+\end{example} 
+\begin{theorem}
+Denote $\vec x=(x_1,\ldots,x_n)$. Let $F(\vec x,y)\in C^1$ in a neighborhood of $N_0(\vec x_0,y_0)$ such that
+\begin{enumerate}
+    \item $F(x_0,y_0)=0$,
+    \item $\dfrac{\partial F}{\partial y}(x_0,y_0)\neq 0$.
+\end{enumerate}
+Then there exists a neighborhood of \((x_0,y_0)\) in which there is a unique (implicit) function
+$y=f(\vec x)$ such that
+\begin{enumerate}
+    \item[(i)] \(y_0=f(\vec x_0)\),
+    \item[(ii)] \(F\bigl(\vec x,f(\vec x)\bigr)=0\) for every \(x\) in the neighborhood,
+    \item[(iii)] And the derivative of \(f\) is given by,
+    \[
+    \frac{\partial f}{\partial x_i}=-\frac{\dfrac{\partial F}{\partial x_i}}{\dfrac{\partial F}{\partial y}}
+    \]
+    in the neighborhood of $(\vec x_0,y_0)$.
+\end{enumerate}
+\end{theorem} 
+\begin{example}
+Given that $3x^2y - yz^2 - 4xz - 7 = 0$. We will show that near \((-1,1,2)\) we can write
+$y = f(x,z)$, and we will find $\frac{\partial f}{\partial x}(-1,2)$.
+Here,
+\[
+F(x,y,z) = 3x^2y - yz^2 - 4xz - 7 \in C^1
+\]
+And $F(-1,1,2) = 0$. Moreover,
+\[
+\frac{\partial F}{\partial y} = 3x^2 - z^2,
+\qquad
+\frac{\partial F}{\partial y}(-1,1,2) = -1 \ne 0.
+\]
+Thus, by the implicit function theorem, there exists a neighborhood of \((-1,1,2)\) in which there is a unique function \(y=f(x,z)\in C^1\) such
+that \(f(-1,2)=1\) and \(F\bigl(x,f(x,z),z\bigr)=0\) for every \((x,z)\) in the neighborhood. Moreover,
+\[
+\frac{\partial f}{\partial x}(-1,2) = -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}}(-1,1,2) = -\frac{6xy - 4z}{3x^2 - z^2}(-1,1,2) = -\frac{6(-1)(1) - 4(2)}{3(-1)^2 - (2)^2} = -\frac{-6 - 8}{3 - 4} = -\frac{-14}{-1} = -14.
+\]
+In fact, 
+\begin{align*}
+    3x^2y-yz^2&= 4xz+7\\
+    y(3x^2-z^2) &= 4xz+7\\
+    y&=\frac{4xz+7}{3x^2-z^2}.
+\end{align*}
+In this example, we can explicitly solve for \(y\) in terms of \(x\) and \(z\), but the implicit function theorem guarantees the existence of such a function even when an explicit formula is not available. The key point is that the condition \(\frac{\partial F}{\partial y}(-1,1,2) \neq 0\) ensures that we can locally solve for \(y\) as a function of \(x\) and \(z\).
+In this example, we can write $z=f(x,y)$ as well, but the theorem fails at \((-1,1,2)\) because
+\[\frac{\partial F}{\partial z}(-1,1,2) = 0.\]
+\end{example}
+\begin{example}
+\[
+\text{ex.}\qquad F(x,y)=(x-y)^3
+\]
+\[
+F(x,y)=0 \iff y=x
+\]
+There is an explicit function at any point.
+However, at \((0,0)\),
+\[
+\frac{\partial F}{\partial x}(0,0)=3(x-y)^2\big|_{(0,0)}=0,
+\]
+\[
+\frac{\partial F}{\partial y}(0,0)=-3(x-y)^2\big|_{(0,0)}=0.
+\]
+The theorem doesn't apply.
+\end{example}
+Let's prove the implicit function theorem for the case of two variables only.  
+\begin{proof}
+    $\frac{\partial F}{\partial y}(x_0,y_0)\neq 0$ implies w.l.o.g. $\frac{\partial F}{\partial y}(x_0,y_0)>0$.
+    Since, $F\in C^1$, $\frac{\partial F}{\partial y}$ is continuous, so $\frac{\partial F}{\partial y}>0$ 
+    at a neighborhood of $(x_0,y_0)$. What do we know about $F(x_0,y)$ function? Here we fixing $x_0$,
+    and view $F$ as a function of $y$. We know that $\frac{\partial F}{\partial y}>0$ at a neighborhood of $(x_0,y_0)$, which implies
+    $F(x_0,y)$ is a strictly increasing function. $\exists y_1$ sucht $F(x_0,y_1)>0$ and $\exists y_2$ such that $F(x_0,y_2)<0$.
+    Since $F\in C^1$, $F$ is continuous. Which implies $\forall x$ near $x_0$ (releasing our first variable),
+    \[ F(x,y_1)>0, \qquad F(x,y_2)<0\]
+    For such an $x$ near $x_0$, since $\frac{\partial F}{\partial y}>0$, $(x,y)$ is strictly increasing as a function of $y$, therefore $! \exists y$ such that $F(x,y)=0$.
+    This proves that $y=f(x)$ exists and is unique. Now,
+    \begin{align*}
+        F(x,f(x))&=0\\
+        \frac{\partial F}{\partial x} \cdot 1+ \frac{\partial F}{\partial y} \frac{d f}{d x} &= 0
+        \implies \frac{d f}{d x} = -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}}.
+    \end{align*}
+\end{proof}
+\begin{theorem}
+    $$
+    \begin{cases}
+        F_1(x_1,\cdots,x_n,z_1,\cdots,z_m)&=0\\
+        \vdots\\
+        F_m(x_1,\cdots,x_n,z_1,\cdots,z_m)&=0
+    \end{cases}
+    $$
+    where $F_i\in C^1$ for $i=1,\cdots,m$. Let 
+\[\triangle=\det\begin{pmatrix}
+\frac{\partial F_1}{\partial z_1} & \cdots & \frac{\partial F_1}{\partial z_m}\\
+\vdots & \ddots & \vdots\\
+\frac{\partial F_m}{\partial z_1} & \cdots & \frac{\partial F_m}{\partial z_m}
+\end{pmatrix}\]
+If $\triangle\neq 0$ at a point $(\vec x^0,\vec z^0)$, then near that point, there are unique functions $z_i = f_i(x_1,\cdots,x_n)$ for $i=1,\cdots,m$ such that the system of equations is satisfied.
+and the partial derivatives of $f_i$'s can be computed using implicit differentiation.
+\end{theorem}
+\begin{example}
+Consider the system of equations:
+\[
+\begin{cases}
+    xu+yvu^2&=2\\
+    xu^3+y^2v^4&=2
+\end{cases}
+\]
+Let's show that near $(x,y,u,v)=(1,1,1,1)$, we can express $u$ and $v$ as functions of $x$ and $y$.
+\[
+\begin{cases}
+F_1(x,y,u,v) &= xu+yvu^2-2\\
+F_2(x,y,u,v) &= xu^3+y^2v^4-2
+\end{cases}
+\]
+Here, \[
+\triangle = \det\begin{pmatrix}
+\frac{\partial F_1}{\partial u} & \frac{\partial F_1}{\partial v}\\
+\frac{\partial F_2}{\partial u} & \frac{\partial F_2}{\partial v}
+\end{pmatrix} = \det\begin{pmatrix}x+2yvu & yu^2\\
+3xu^2 & 4y^2v^3 \end{pmatrix}.
+\]
+Evaluating at the point $(1,1,1,1)$ gives:
+\[\triangle(1,1,1,1) = \det\begin{pmatrix}1+2(1)(1) & 1(1)^2\\
+3(1)(1)^2 & 4(1)^2(1)^3 \end{pmatrix} = \det\begin{pmatrix}3 & 1\\
+3 & 4 \end{pmatrix} = 3\cdot4 - 1\cdot3 = 12 - 3 = 9 \neq 0.\]
+By the implicit function theorem, there exist unique functions \(u=f_1(x,y)\) and \(v=f_2(x,y)\) near the point $(1,1,1,1)$.
+Let's find $\frac{\partial u}{\partial x}(1,1)$:
+\[
+\begin{cases}
+    u+x\frac{\partial u}{\partial x}+y\frac{\partial v}{\partial x}u^2+2yvu\frac{\partial u}{\partial x}&=0\\
+    u^3+3xu^2\frac{\partial u}{\partial x}+y^2\cdot 4v^3\frac{\partial v}{\partial x}&=0
+\end{cases} \implies 
+\begin{cases}
+    3\frac{\partial u}{\partial x}+\frac{\partial v}{\partial x}&=-1\\
+    3\frac{\partial u}{\partial x}+4\frac{\partial v}{\partial x}&=-1
+\end{cases}
+\]  
+Now, solve the system of equations to find $\frac{\partial u}{\partial x}(1,1)$.
+\end{example}
